@@ -8,7 +8,7 @@ O **Happy** é uma aplicação web desenvolvida para facilitar a localização e
 
 ## 🔗 Demo
 Você pode acessar o projeto rodando ao vivo através do GitHub Pages:
-👉 [Acessar o Happy Online](https://kennedykauan.github.io/Site-Happy/)
+👉 [Acessar o Happy Online](https://kennedykauan.github.io/ucb-engenharia-software/semestre_01/front_end/Site-Happy/))
 
 ---
 
