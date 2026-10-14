@@ -1,0 +1,2063 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>AJUDA+</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <div class="phone" id="app">
+
+    <!-- STATUS BAR -->
+    <div class="status-bar">
+      <span>9:41</span>
+      <div class="icons">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M1.5 8.5a13 13 0 0121 0M5.5 12.5a9 9 0 0113 0M9.5 16.5a5 5 0 015 0M12 20.5h.01" />
+        </svg>
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M8.5 20.5h7M12 4.5v16M6 9a6 6 0 1112 0" />
+        </svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="7" width="18" height="10" rx="2" />
+          <path d="M22 11v2" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════
+       SCREEN: HOME
+  ═══════════════════════════════ -->
+    <div class="screen active" id="screen-home">
+      <div class="app-header">
+        <div class="logo">
+          <svg class="logo-icon" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="40" cy="40" r="40" fill="#2BBFB3" />
+            <path
+              d="M40 58 C40 58 22 46 22 33 C22 26 27.5 20.5 34 21 C37 21.5 39.5 23.5 40 25 C40.5 23.5 43 21.5 46 21 C52.5 20.5 58 26 58 33 C58 46 40 58 40 58Z"
+              fill="white" />
+            <path d="M40 25 C40 25 32 22 28 27" stroke="white" stroke-width="2" fill="none" opacity="0.4" />
+            <path d="M30 16 C30 16 25 12 20 16 C18 17.5 17 20 18 22.5" stroke="white" stroke-width="2.5" fill="none"
+              stroke-linecap="round" />
+            <path d="M50 16 C50 16 55 12 60 16 C62 17.5 63 20 62 22.5" stroke="white" stroke-width="2.5" fill="none"
+              stroke-linecap="round" />
+          </svg>
+          AJUDA+
+        </div>
+        <button class="notif-btn" onclick="goTo('screen-notifications')">&#128276;</button>
+      </div>
+
+      <div class="screen-body">
+        <!-- Hero -->
+        <div style="text-align:center; padding: 14px 14px 0;">
+          <h2 style="font-size:18px; font-weight:900; color:var(--text); margin-bottom:6px; line-height:1.3;">Juntos
+            fazemos a diferença!</h2>
+          <p style="font-size:12px; color:var(--text-mid); line-height:1.5;">Conectamos pessoas para ajudar vítimas de
+            tragédias naturais que precisam de nós momentos difíceis.</p>
+        </div>
+
+        <div class="home-hero">
+
+          <div class="home-hero-text">
+            <h3>Sua ajuda pode transformar vidas.</h3>
+            <p>Doe, seja voluntário ou compartilhe.</p>
+
+            <button class="btn-primary" onclick="goTo('screen-campaigns')">
+              Ver campanhas
+            </button>
+          </div>
+
+        </div>
+
+        <div class="section-title">Como você quer ajudar?</div>
+        <div class="help-cards">
+          <button class="help-card" onclick="requireLogin('screen-donation')">
+            <div class="icon-circle" style="background:var(--red-light);">❤️</div>
+            <span class="hc-label">Doar</span>
+            <span class="hc-sub">Faça doações e ajude agora mesmo!</span>
+          </button>
+          <button class="help-card" onclick="requireLogin('screen-volunteer')">
+            <div class="icon-circle" style="background:var(--teal-light);">👥</div>
+            <span class="hc-label">Ser Voluntário</span>
+            <span class="hc-sub">Ofereça seu tempo e faça parte</span>
+          </button>
+          <button class="help-card" onclick="goTo('screen-divulgacao')">
+            <div class="icon-circle" style="background:#f3e5f5;">🔗</div>
+            <span class="hc-label">Divulgar</span>
+            <span class="hc-sub">Compartilhe campanhas e alcance mais pessoas.</span>
+          </button>
+        </div>
+
+        <div class="section-title">Campanhas em destaque</div>
+        <div class="campaign-card" style="margin-bottom:14px;">
+          <img src="img/Imagem senhora alagada 1.png" alt="enchente" />
+          <div class="campaign-card-body">
+            <span class="badge">✔ VERIFICADO</span>
+            <h4>Ajuda às famílias do Sul</h4>
+            <p>Campanha para arrecadação de alimentos, água potável e itens de limpeza</p>
+            <div class="progress-row">
+              <span class="progress-val">75% da meta alcançada</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width:75%"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="features-banner">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg>
+          <div>
+            <h5 style="font-size:13px; font-weight:800; color:var(--text); margin-bottom:3px;">Segurança e Transparência
+            </h5>
+            <p style="font-size:11px; color:var(--text-mid); line-height:1.5;">Todas as campanhas e ONGs são
+              verificadas. Acompanhe o impacto da sua jornada em tempo real.</p>
+          </div>
+        </div>
+        <div style="height:14px;"></div>
+      </div>
+
+      <nav class="bottom-nav">
+        <button class="nav-item active" onclick="goTo('screen-home')">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+          </svg>
+          Início
+        </button>
+        <button class="nav-item" onclick="goTo('screen-impact')">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M5 9v11H1V9h4zm6-5v16H7V4h4zm6 8v8h-4v-8h4zm4-7v15h-4V5h4z" />
+          </svg>
+          Impacto
+        </button>
+        <button class="nav-item" onclick="goTo('screen-contact')">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
+          </svg>
+          Contato
+        </button>
+        <button class="nav-item" onclick="requireLogin('screen-profile')">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
+          </svg>
+          Perfil
+        </button>
+      </nav>
+    </div>
+
+    <!-- ═══════════════════════════════
+       SCREEN: CAMPAIGNS
+  ═══════════════════════════════ -->
+    <div class="screen" id="screen-campaigns">
+      <div class="app-header">
+        <div class="logo">
+          <svg class="logo-icon" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="40" cy="40" r="40" fill="#2BBFB3" />
+            <path
+              d="M40 58 C40 58 22 46 22 33 C22 26 27.5 20.5 34 21 C37 21.5 39.5 23.5 40 25 C40.5 23.5 43 21.5 46 21 C52.5 20.5 58 26 58 33 C58 46 40 58 40 58Z"
+              fill="white" />
+            <path d="M30 16 C30 16 25 12 20 16 C18 17.5 17 20 18 22.5" stroke="white" stroke-width="2.5" fill="none"
+              stroke-linecap="round" />
+            <path d="M50 16 C50 16 55 12 60 16 C62 17.5 63 20 62 22.5" stroke="white" stroke-width="2.5" fill="none"
+              stroke-linecap="round" />
+          </svg>
+          AJUDA+
+        </div>
+      </div>
+
+      <div class="screen-body">
+        <div class="page-title">Campanhas</div>
+        <div class="page-subtitle">Participe e faça a diferença!</div>
+        <div class="section-title">Campanhas em destaque</div>
+
+        <div class="campaign-highlight">
+          <img src="img/Enchente.jpeg" alt="chuvas RS" />
+          <div class="ch-en-curso">EM ANDAMENTO</div>
+          <button class="ch-fav">❤️</button>
+          <div class="ch-body">
+            <h4>SOS Chuvas - Rio Grande do Sul</h4>
+            <p>Ajude famílias afetadas pelas fortes chuvas e enchentes no RS.</p>
+            <div class="progress-row">
+              <span class="progress-val">R$ 45.320 arrecadados</span>
+              <span class="progress-pct">75%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width:75%"></div>
+            </div>
+            <div class="donors-row">👥 1.250 doadores</div>
+          </div>
+        </div>
+
+        <div class="carousel-dots">
+          <div class="dot active"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+
+        <!-- Disaster Map -->
+        <div style="display:flex; justify-content:space-between; align-items:center; padding: 10px 14px 6px;">
+          <span style="font-size:15px; font-weight:800; color:var(--text);">Mapa dos Desastres</span>
+          <span style="font-size:12px; color:var(--teal); font-weight:700; cursor:pointer;">Ver mapa completo ›</span>
+        </div>
+        <div class="map-container">
+          <div class="map-bg">
+            <img src="img/Mapa.jpeg" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;" />
+            <div style="position:absolute; top:22%; left:18%;">
+            </div>
+            <div class="map-legend">
+              <div class="legend-item">
+                <div class="legend-dot" style="background:var(--green)"></div>Baixo Impacto
+              </div>
+              <div class="legend-item">
+                <div class="legend-dot" style="background:var(--yellow)"></div>Médio Impacto
+              </div>
+              <div class="legend-item">
+                <div class="legend-dot" style="background:var(--orange)"></div>Alto Impacto
+              </div>
+              <div class="legend-item">
+                <div class="legend-dot" style="background:var(--red)"></div>Muito Alto
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="section-title" style="padding-bottom:0;">Filtros</div>
+        <div class="filters-row">
+          <div class="filter-chip" onclick="toggleFilterDropdown('dd-regiao', this)">📍 Região ▾</div>
+          <div class="filter-chip" onclick="toggleFilterDropdown('dd-tragedia', this)">⚠️ Tragédia ▾</div>
+          <div class="filter-chip" onclick="toggleFilterDropdown('dd-desastre', this)">🌧️ Desastre ▾</div>
+        </div>
+        <!-- Dropdowns -->
+        <div id="dd-regiao" class="filter-dropdown" style="display:none;">
+          <div class="fd-title">Selecione a Região</div>
+          <div class="fd-option" onclick="selectFilter('dd-regiao','Sul')">🟢 Sul</div>
+          <div class="fd-option" onclick="selectFilter('dd-regiao','Sudeste')">🟡 Sudeste</div>
+          <div class="fd-option" onclick="selectFilter('dd-regiao','Nordeste')">🟠 Nordeste</div>
+          <div class="fd-option" onclick="selectFilter('dd-regiao','Norte')">🔵 Norte</div>
+          <div class="fd-option" onclick="selectFilter('dd-regiao','Centro-Oeste')">🟣 Centro-Oeste</div>
+        </div>
+        <div id="dd-tragedia" class="filter-dropdown" style="display:none;">
+          <div class="fd-title">Tipo de Tragédia</div>
+          <div class="fd-option" onclick="selectFilter('dd-tragedia','Natural')">🌍 Natural</div>
+          <div class="fd-option" onclick="selectFilter('dd-tragedia','Tecnológica')">🏭 Tecnológica</div>
+          <div class="fd-option" onclick="selectFilter('dd-tragedia','Humanitária')">🤝 Humanitária</div>
+          <div class="fd-option" onclick="selectFilter('dd-tragedia','Ambiental')">🌿 Ambiental</div>
+        </div>
+        <div id="dd-desastre" class="filter-dropdown" style="display:none;">
+          <div class="fd-title">Tipo de Desastre</div>
+          <div class="fd-option" onclick="selectFilter('dd-desastre','Enchente')">🌊 Enchente</div>
+          <div class="fd-option" onclick="selectFilter('dd-desastre','Incêndio Florestal')">🔥 Incêndio Florestal</div>
+          <div class="fd-option" onclick="selectFilter('dd-desastre','Vendaval')">💨 Vendaval</div>
+          <div class="fd-option" onclick="selectFilter('dd-desastre','Deslizamento')">⛰️ Deslizamento</div>
+          <div class="fd-option" onclick="selectFilter('dd-desastre','Seca')">☀️ Seca</div>
+          <div class="fd-option" onclick="selectFilter('dd-desastre','Terremoto')">🏔️ Terremoto</div>
+        </div>
+
+        <div class="section-title">Campanhas encontradas</div>
+        <div class="campaign-list-item">
+          <div class="cli-icon" style="background:var(--teal-light);">🌊</div>
+          <div class="cli-body">
+            <h5>SOS Enchentes - RS</h5>
+            <p>Ajude Famílias afetadas pelas enchentes.</p>
+            <div class="cli-bar">
+              <div class="cli-bar-fill" style="width:85%"></div>
+            </div>
+          </div>
+          <span class="cli-pct">85%</span>
+        </div>
+        <div class="campaign-list-item">
+          <div class="cli-icon" style="background:#fff3e0;">⛰️</div>
+          <div class="cli-body">
+            <h5>Deslizamentos - SP</h5>
+            <p>Apoio às vítimas de deslizamento de terra</p>
+            <div class="cli-bar">
+              <div class="cli-bar-fill" style="width:60%"></div>
+            </div>
+          </div>
+          <span class="cli-pct">60%</span>
+        </div>
+        <div class="campaign-list-item" style="margin-bottom:14px;">
+          <div class="cli-icon" style="background:#fff8e1;">☀️</div>
+          <div class="cli-body">
+            <h5>Seca - Nordeste</h5>
+            <p>Apoio emergencial para famílias do sertão</p>
+            <div class="cli-bar">
+              <div class="cli-bar-fill" style="width:45%; background:var(--orange)"></div>
+            </div>
+          </div>
+          <span class="cli-pct" style="color:var(--orange);">45%</span>
+        </div>
+      </div>
+
+      <nav class="bottom-nav">
+        <button class="nav-item active" onclick="goTo('screen-home')">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+          </svg>
+          Início
+        </button>
+        <button class="nav-item" onclick="goTo('screen-impact')">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M5 9v11H1V9h4zm6-5v16H7V4h4zm6 8v8h-4v-8h4zm4-7v15h-4V5h4z" />
+          </svg>
+          Impacto
+        </button>
+        <button class="nav-item" onclick="goTo('screen-contact')">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
+          </svg>
+          Contato
+        </button>
+        <button class="nav-item" onclick="requireLogin('screen-profile')">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
+          </svg>
+          Perfil
+        </button>
+      </nav>
+    </div>
+
+    <!-- ═══════════════════════════════
+       SCREEN: IMPACT
+  ═══════════════════════════════ -->
+    <div class="screen" id="screen-impact">
+      <div class="app-header">
+        <div class="logo">
+          <svg class="logo-icon" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="40" cy="40" r="40" fill="#2BBFB3" />
+            <path
+              d="M40 58 C40 58 22 46 22 33 C22 26 27.5 20.5 34 21 C37 21.5 39.5 23.5 40 25 C40.5 23.5 43 21.5 46 21 C52.5 20.5 58 26 58 33 C58 46 40 58 40 58Z"
+              fill="white" />
+            <path d="M30 16 C30 16 25 12 20 16 C18 17.5 17 20 18 22.5" stroke="white" stroke-width="2.5" fill="none"
+              stroke-linecap="round" />
+            <path d="M50 16 C50 16 55 12 60 16 C62 17.5 63 20 62 22.5" stroke="white" stroke-width="2.5" fill="none"
+              stroke-linecap="round" />
+          </svg>
+          AJUDA+
+        </div>
+      </div>
+
+      <div class="screen-body">
+        <div class="page-title">Impacto</div>
+        <div class="page-subtitle">Veja como sua ajuda transforma vidas.</div>
+
+        <div style="height:14px;"></div>
+        <div class="impact-grid">
+          <div class="impact-card">
+            <div class="ic-title">Pessoas Beneficiadas</div>
+            <div class="ic-icon">👥</div>
+            <div class="ic-val">12.540</div>
+            <div class="ic-label">pessoas</div>
+          </div>
+          <div class="impact-card">
+            <div class="ic-title">Itens Distribuídos</div>
+            <div class="ic-icon">📦</div>
+            <div class="ic-val">25.320</div>
+            <div class="ic-label">itens</div>
+          </div>
+          <div class="impact-card">
+            <div class="ic-title">Total Arrecadado</div>
+            <div class="ic-icon">💰</div>
+            <div class="ic-val" style="font-size:17px;">R$ 1.250.780</div>
+            <div class="ic-label">arrecadados</div>
+          </div>
+          <div class="impact-card">
+            <div class="ic-title">Abrigos</div>
+            <div class="ic-icon">🏠</div>
+            <div class="ic-val">68</div>
+            <div class="ic-label">abrigos apoiados</div>
+          </div>
+        </div>
+
+        <div class="section-title">Impacto por Região</div>
+        <div
+          style="margin: 0 14px; background:var(--white); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); padding:14px; display:flex; gap:14px; align-items:center;">
+          <div style="flex:1; display:flex; align-items:center; justify-content:center;">
+            <img src="img/Mapa calor.png" alt="Mapa de calor por região"
+              style="width:100%; max-width:700px; height:150px; object-fit:contain; transform: scale(1.5) translateX(22px);" />
+          </div>
+          <div class="region-list" style="flex:1; padding:0;">
+            <div class="region-item"><span class="rname">Sul</span><span class="rval">5.230</span></div>
+            <div class="region-item"><span class="rname">Sudeste</span><span class="rval">4.120</span></div>
+            <div class="region-item"><span class="rname">Nordeste</span><span class="rval">2.870</span></div>
+            <div class="region-item"><span class="rname">Norte</span><span class="rval">1.340</span></div>
+            <div class="region-item" style="border:none"><span class="rname">Centro-Oeste</span><span
+                class="rval">980</span></div>
+          </div>
+        </div>
+        <div style="height:14px;"></div>
+      </div>
+
+      <nav class="bottom-nav">
+        <button class="nav-item" onclick="goTo('screen-home')">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+          </svg>
+          Início
+        </button>
+        <button class="nav-item active" onclick="goTo('screen-impact')">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M5 9v11H1V9h4zm6-5v16H7V4h4zm6 8v8h-4v-8h4zm4-7v15h-4V5h4z" />
+          </svg>
+          Impacto
+        </button>
+        <button class="nav-item" onclick="goTo('screen-contact')">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
+          </svg>
+          Contato
+        </button>
+        <button class="nav-item" onclick="requireLogin('screen-profile')">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
+          </svg>
+          Perfil
+        </button>
+      </nav>
+    </div>
+
+    <!-- ═══════════════════════════════
+       SCREEN: CONTACT
+  ═══════════════════════════════ -->
+    <div class="screen" id="screen-contact">
+      <div class="app-header">
+        <div class="logo">
+          <svg class="logo-icon" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="40" cy="40" r="40" fill="#2BBFB3" />
+            <path
+              d="M40 58 C40 58 22 46 22 33 C22 26 27.5 20.5 34 21 C37 21.5 39.5 23.5 40 25 C40.5 23.5 43 21.5 46 21 C52.5 20.5 58 26 58 33 C58 46 40 58 40 58Z"
+              fill="white" />
+            <path d="M30 16 C30 16 25 12 20 16 C18 17.5 17 20 18 22.5" stroke="white" stroke-width="2.5" fill="none"
+              stroke-linecap="round" />
+            <path d="M50 16 C50 16 55 12 60 16 C62 17.5 63 20 62 22.5" stroke="white" stroke-width="2.5" fill="none"
+              stroke-linecap="round" />
+          </svg>
+          AJUDA+
+        </div>
+      </div>
+
+      <div class="screen-body">
+        <div class="page-title">Contato</div>
+        <div class="page-subtitle">Estamos aqui para ajudar!</div>
+
+        <div class="contact-card">
+          <div class="cc-head">
+            <div class="cc-icon">🎧</div>
+            <div>
+              <h4>Suporte</h4>
+              <p>Fale com nossa equipe de suporte para tirar dúvidas ou obter ajuda.</p>
+            </div>
+          </div>
+          <button class="btn-primary" onclick="animateSupport(this)">Falar com Suporte</button>
+        </div>
+
+        <div class="contact-card">
+          <div class="cc-head">
+            <div class="cc-icon" style="font-size:36px; color:#0088cc;">✈️</div>
+            <div>
+              <h4>Telegram</h4>
+              <p>Entre no nosso canal do Telegram e receba atualizações em tempo real.</p>
+            </div>
+          </div>
+          <button class="btn-primary" onclick="animateTelegram(this)">Abrir Telegram</button>
+        </div>
+
+        <div
+          style="margin: 12px 14px 14px; background:var(--white); border-radius:var(--radius); box-shadow:var(--shadow);">
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:16px; cursor:pointer;"
+            onclick="toggleFaq()">
+            <div>
+              <h5 style="font-size:15px; font-weight:800; color:var(--text);">Perguntas Frequentes</h5>
+              <p style="font-size:12px; color:var(--text-light); margin-top:3px;">Tire suas dúvidas rapidamente.</p>
+            </div>
+            <span id="faq-arrow" style="color:var(--text-light); font-size:18px; transition:transform .3s;">›</span>
+          </div>
+          <div id="faq-content" style="display:none; border-top:1px solid var(--border);">
+            <!-- Perguntas -->
+            <div class="faq-item" onclick="toggleFaqItem(this)">
+              <div class="faq-question">
+                <span>Como minha doação é utilizada?</span>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">100% das doações são direcionadas às campanhas escolhidas, com total transparência
+                e prestação de contas publicada no app.</div>
+            </div>
+            <div class="faq-item" onclick="toggleFaqItem(this)">
+              <div class="faq-question">
+                <span>Posso cancelar uma doação recorrente?</span>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">Sim! Acesse seu perfil, vá em "Configurações" e clique em "Gerenciar doações
+                recorrentes" para cancelar a qualquer momento.</div>
+            </div>
+            <div class="faq-item" onclick="toggleFaqItem(this)">
+              <div class="faq-question">
+                <span>Como me tornar voluntário?</span>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">Na tela inicial, clique em "Ser Voluntário" e preencha o formulário. Nossa equipe
+                entrará em contato em até 24h.</div>
+            </div>
+            <div class="faq-item" onclick="toggleFaqItem(this)">
+              <div class="faq-question">
+                <span>Minhas informações estão seguras?</span>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-answer">Sim! Utilizamos criptografia de ponta a ponta e seguimos todas as normas da LGPD
+                para proteger seus dados.</div>
+            </div>
+            <!-- Campo para nova pergunta -->
+            <div style="padding:14px; border-top:1px solid var(--border);">
+              <p style="font-size:13px; font-weight:700; color:var(--text); margin-bottom:8px;">Não encontrou sua
+                dúvida?</p>
+              <div style="display:flex; gap:8px; align-items:center;">
+                <input type="text" id="faq-input" placeholder="Digite sua pergunta..."
+                  style="flex:1; border:1.5px solid var(--border); border-radius:99px; padding:10px 14px; font-size:13px; font-family:'Nunito',sans-serif; outline:none;"
+                  onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--border)'" />
+                <button onclick="sendFaqQuestion()"
+                  style="background:var(--teal); border:none; border-radius:50%; width:38px; height:38px; display:flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0; font-size:16px;">➤</button>
+              </div>
+              <div id="faq-sent"
+                style="display:none; margin-top:8px; background:var(--teal-light); border-radius:8px; padding:8px 12px; font-size:12px; color:var(--teal); font-weight:700;">
+                ✅ Pergunta enviada! Responderemos em breve.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="bottom-nav">
+        <button class="nav-item" onclick="goTo('screen-home')">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+          </svg>
+          Início
+        </button>
+        <button class="nav-item" onclick="goTo('screen-impact')">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M5 9v11H1V9h4zm6-5v16H7V4h4zm6 8v8h-4v-8h4zm4-7v15h-4V5h4z" />
+          </svg>
+          Impacto
+        </button>
+        <button class="nav-item active" onclick="goTo('screen-contact')">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
+          </svg>
+          Contato
+        </button>
+        <button class="nav-item" onclick="requireLogin('screen-profile')">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
+          </svg>
+          Perfil
+        </button>
+      </nav>
+    </div>
+
+    <!-- ═══════════════════════════════
+       SCREEN: NOTIFICATIONS
+  ═══════════════════════════════ -->
+    <div class="screen" id="screen-notifications">
+      <div class="app-header">
+        <button class="back-btn" onclick="goBack()">‹</button>
+        <div class="logo">
+          <svg class="logo-icon" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="40" cy="40" r="40" fill="#2BBFB3" />
+            <path
+              d="M40 58 C40 58 22 46 22 33 C22 26 27.5 20.5 34 21 C37 21.5 39.5 23.5 40 25 C40.5 23.5 43 21.5 46 21 C52.5 20.5 58 26 58 33 C58 46 40 58 40 58Z"
+              fill="white" />
+            <path d="M30 16 C30 16 25 12 20 16 C18 17.5 17 20 18 22.5" stroke="white" stroke-width="2.5" fill="none"
+              stroke-linecap="round" />
+            <path d="M50 16 C50 16 55 12 60 16 C62 17.5 63 20 62 22.5" stroke="white" stroke-width="2.5" fill="none"
+              stroke-linecap="round" />
+          </svg>
+          AJUDA+
+        </div>
+        <button class="notif-btn">🔔</button>
+      </div>
+
+      <div class="screen-body">
+        <div class="page-title">Notificações</div>
+        <div class="page-subtitle">Fique por dentro dos alertas, metas e informações importantes.</div>
+
+        <!-- Painel de preferências de notificação -->
+        <div
+          style="margin:14px 14px 0; background:var(--white); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden;">
+          <div
+            style="padding:12px 14px 10px; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:8px;">
+            <span style="font-size:16px;">⚙️</span>
+            <span style="font-size:14px; font-weight:800; color:var(--text);">Preferências de Notificação</span>
+          </div>
+          <div class="pep-row" style="padding:10px 14px;">
+            <span style="font-size:13px; font-weight:600; color:var(--text);">🔔 Alertas de desastre</span>
+            <label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+          </div>
+          <div class="pep-row" style="padding:10px 14px;">
+            <span style="font-size:13px; font-weight:600; color:var(--text);">🎯 Metas de doações</span>
+            <label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+          </div>
+          <div class="pep-row" style="padding:10px 14px; border-bottom:none;">
+            <span style="font-size:13px; font-weight:600; color:var(--text);">📢 Novidades e campanhas</span>
+            <label class="toggle-switch"><input type="checkbox"><span class="toggle-slider"></span></label>
+          </div>
+        </div>
+        <div style="height:14px;"></div>
+        <div class="notif-section alerts-border" style="border-color:var(--red)">
+          <div class="notif-section-header alert-header">
+            <div class="nsh-left">
+              <span style="font-size:18px;">🔔</span>
+              <h5 style="color:var(--red);">Alertas</h5>
+            </div>
+            <span class="nsh-ver">Ver todos ›</span>
+          </div>
+          <div class="notif-item">
+            <div class="ni-icon-box">⚠️</div>
+            <div class="ni-body">
+              <h6>Alerta de enchente em São Paulo</h6>
+              <p>Risco de alagamentos em áreas próximas ao rio Tietê.</p>
+            </div>
+            <div style="display:flex; flex-direction:column; align-items:flex-end; gap:6px;">
+              <span class="ni-time">Há 15 min</span>
+              <div class="ni-dot"></div>
+            </div>
+          </div>
+          <div class="notif-item">
+            <div class="ni-icon-box">⚠️</div>
+            <div class="ni-body">
+              <h6>Risco de deslizamento em Petrópolis</h6>
+              <p>Chuvas intensas aumentam o risco de deslizamentos.</p>
+            </div>
+            <div style="display:flex; flex-direction:column; align-items:flex-end; gap:6px;">
+              <span class="ni-time">Há 1 hora</span>
+              <div class="ni-dot"></div>
+            </div>
+          </div>
+          <div class="notif-item">
+            <div class="ni-icon-box">⚠️</div>
+            <div class="ni-body">
+              <h6>Tempestade prevista</h6>
+              <p>Tempestade com ventos fortes prevista para as próximas 24h.</p>
+            </div>
+            <span class="ni-time">Há 3 horas</span>
+          </div>
+        </div>
+
+        <!-- Meta section -->
+        <div class="notif-section meta-border">
+          <div class="notif-section-header meta-header">
+            <div class="nsh-left">
+              <span style="font-size:18px;">🎯</span>
+              <h5>Meta de Doações</h5>
+            </div>
+            <span class="nsh-ver">Ver todas ›</span>
+          </div>
+          <div class="notif-item">
+            <div class="ni-icon-box blue">💙</div>
+            <div class="ni-body">
+              <h6>Campanha Enchente RS</h6>
+              <div style="height:4px; background:#eee; border-radius:99px; margin:5px 0;">
+                <div style="width:75%; height:4px; background:var(--teal); border-radius:99px;"></div>
+              </div>
+              <p style="color:var(--teal); font-weight:700;">R$ 15.000 / R$ 20.000</p>
+            </div>
+            <div class="ni-dot"></div>
+          </div>
+          <div class="notif-item">
+            <div class="ni-icon-box blue">💙</div>
+            <div class="ni-body">
+              <h6>Faltam R$ 2.000 para concluir!</h6>
+              <p>Sua contribuição faz toda a diferença</p>
+            </div>
+            <span class="ni-time">Há 2 horas</span>
+          </div>
+          <div class="notif-item">
+            <div class="ni-icon-box blue">💙</div>
+            <div class="ni-body">
+              <h6>Nova meta criada!</h6>
+              <p>Ajude as famílias afetadas pelas chuvas no Nordeste</p>
+            </div>
+            <span class="ni-time">Há 5 horas</span>
+          </div>
+        </div>
+
+        <!-- Disaster types -->
+        <div class="notif-section" style="border-color:#7c4dff;">
+          <div class="notif-section-header">
+            <div class="nsh-left">
+              <span style="font-size:18px;">🌍</span>
+              <h5>Tipos de Desastres</h5>
+            </div>
+            <span class="nsh-ver">Ver todos ›</span>
+          </div>
+          <div class="disaster-icons-row">
+            <div class="dis-icon-item">
+              <div class="dii-box">🌊</div><span>Enchentes</span>
+            </div>
+            <div class="dis-icon-item">
+              <div class="dii-box">🔥</div><span>Incêndios Florestais</span>
+            </div>
+            <div class="dis-icon-item">
+              <div class="dii-box">💨</div><span>Vendavais</span>
+            </div>
+            <div class="dis-icon-item">
+              <div class="dii-box">⛰️</div><span>Deslizamentos</span>
+            </div>
+            <div class="dis-icon-item">
+              <div class="dii-box">🌋</div><span>Erupções Vulcânicas</span>
+            </div>
+            <div class="dis-icon-item">
+              <div class="dii-box">🏔️</div><span>Terremotos</span>
+            </div>
+          </div>
+          <p style="font-size:11px; color:var(--text-light); padding:0 14px 12px; text-align:center;">Fique informado
+            sobre os principais tipos de desastres e como ajudar</p>
+        </div>
+
+        <div style="height:14px;"></div>
+      </div>
+
+      <nav class="bottom-nav">
+        <button class="nav-item" onclick="goTo('screen-home')">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+          </svg>
+          Início
+        </button>
+        <button class="nav-item" onclick="goTo('screen-impact')">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M5 9v11H1V9h4zm6-5v16H7V4h4zm6 8v8h-4v-8h4zm4-7v15h-4V5h4z" />
+          </svg>
+          Impacto
+        </button>
+        <button class="nav-item" onclick="goTo('screen-contact')">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
+          </svg>
+          Contato
+        </button>
+        <button class="nav-item" onclick="requireLogin('screen-profile')">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
+          </svg>
+          Perfil
+        </button>
+      </nav>
+    </div>
+
+    <!-- ═══════════════════════════════
+       SCREEN: LOGIN
+  ═══════════════════════════════ -->
+    <div class="screen" id="screen-login">
+      <div class="app-header">
+        <button class="back-btn" onclick="goBack()">‹</button>
+        <div class="logo">
+          <svg class="logo-icon" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="40" cy="40" r="40" fill="#2BBFB3" />
+            <path
+              d="M40 58 C40 58 22 46 22 33 C22 26 27.5 20.5 34 21 C37 21.5 39.5 23.5 40 25 C40.5 23.5 43 21.5 46 21 C52.5 20.5 58 26 58 33 C58 46 40 58 40 58Z"
+              fill="white" />
+            <path d="M30 16 C30 16 25 12 20 16 C18 17.5 17 20 18 22.5" stroke="white" stroke-width="2.5" fill="none"
+              stroke-linecap="round" />
+            <path d="M50 16 C50 16 55 12 60 16 C62 17.5 63 20 62 22.5" stroke="white" stroke-width="2.5" fill="none"
+              stroke-linecap="round" />
+          </svg>
+          AJUDA+
+        </div>
+      </div>
+
+      <div class="screen-body">
+        <div class="login-screen">
+          <h2>Bem-vindo de volta!</h2>
+          <p>Entre na sua conta para continuar ajudando</p>
+
+          <div class="login-form">
+            <div id="login-error" class="login-error">
+              ❌ E-mail ou senha incorretos. Tente novamente.
+            </div>
+            <input type="email" id="login-email" placeholder="E-mail" />
+            <input type="password" id="login-password" placeholder="Senha" />
+            <button class="btn-primary" onclick="doLogin()" style="margin-top:4px;">Entrar</button>
+            <div class="login-divider">ou</div>
+            <button class="btn-outline" onclick="demoLogin()">Entrar com conta demo</button>
+          </div>
+
+          <div class="login-register" style="margin-top:16px;">
+            Não tem conta? <a href="#" onclick="alert('Cadastro em desenvolvimento!')">Cadastrar-se</a>
+          </div>
+          <div style="font-size:11px; color:var(--text-light); margin-top:8px; text-align:center;">
+            💡 Use: <strong>joao@ajuda.com</strong> / <strong>1234</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════
+       SCREEN: PROFILE
+  ═══════════════════════════════ -->
+    <div class="screen" id="screen-profile">
+      <div class="app-header">
+        <div class="logo">
+          <svg class="logo-icon" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="40" cy="40" r="40" fill="#2BBFB3" />
+            <path
+              d="M40 58 C40 58 22 46 22 33 C22 26 27.5 20.5 34 21 C37 21.5 39.5 23.5 40 25 C40.5 23.5 43 21.5 46 21 C52.5 20.5 58 26 58 33 C58 46 40 58 40 58Z"
+              fill="white" />
+            <path d="M30 16 C30 16 25 12 20 16 C18 17.5 17 20 18 22.5" stroke="white" stroke-width="2.5" fill="none"
+              stroke-linecap="round" />
+            <path d="M50 16 C50 16 55 12 60 16 C62 17.5 63 20 62 22.5" stroke="white" stroke-width="2.5" fill="none"
+              stroke-linecap="round" />
+          </svg>
+          AJUDA+
+        </div>
+      </div>
+
+      <div class="screen-body">
+        <div class="profile-header">
+          <div class="profile-avatar">
+            👤
+            <div class="avatar-edit">✏️</div>
+          </div>
+          <div class="profile-info">
+            <h3>Olá, João Silva</h3>
+            <p>Seja bem-vindo(a)!</p>
+            <div class="profile-badge">❤️ Membro desde Jan/2024</div>
+          </div>
+        </div>
+
+        <div style="height:12px;"></div>
+
+        <button class="profile-menu-item" onclick="toggleProfileItem('config-panel')">
+          <div class="pmi-icon">⚙️</div>
+          <div class="pmi-body">
+            <h5>Configurações</h5>
+            <p>Gerencie suas preferências do aplicativo</p>
+          </div>
+          <span class="pmi-arrow" id="arrow-config">›</span>
+        </button>
+        <div id="config-panel" class="profile-expand-panel" style="display:none;">
+          <div class="pep-row">
+            <span>🌙 Modo escuro</span>
+            <label class="toggle-switch"><input type="checkbox"><span class="toggle-slider"></span></label>
+          </div>
+          <div class="pep-row">
+            <span>📍 Localização</span>
+            <label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+          </div>
+        </div>
+
+        <button class="profile-menu-item" onclick="toggleProfileItem('email-panel')">
+          <div class="pmi-icon">✉️</div>
+          <div class="pmi-body">
+            <h5>E-mail</h5>
+            <p>joaosilva@gmail.com</p>
+          </div>
+          <span class="pmi-arrow" id="arrow-email">›</span>
+        </button>
+        <div id="email-panel" class="profile-expand-panel" style="display:none;">
+          <p style="font-size:12px; color:var(--text-light); margin-bottom:8px;">Alterar e-mail cadastrado:</p>
+          <input type="email" placeholder="Novo e-mail" value="joaosilva@gmail.com"
+            style="width:100%; border:1.5px solid var(--border); border-radius:var(--radius-sm); padding:10px 12px; font-size:13px; font-family:'Nunito',sans-serif; outline:none; margin-bottom:8px;" />
+          <button class="btn-primary" style="width:100%; font-size:13px; padding:10px;"
+            onclick="showSuccess('E-mail atualizado com sucesso! 📧')">Salvar alteração</button>
+        </div>
+
+        <button class="profile-menu-item" onclick="toggleProfileItem('idade-panel')">
+          <div class="pmi-icon">👤</div>
+          <div class="pmi-body">
+            <h5>Idade</h5>
+            <p>28 anos</p>
+          </div>
+          <span class="pmi-arrow" id="arrow-idade">›</span>
+        </button>
+        <div id="idade-panel" class="profile-expand-panel" style="display:none;">
+          <p style="font-size:12px; color:var(--text-light); margin-bottom:8px;">Alterar sua idade:</p>
+          <input type="number" placeholder="Sua idade" value="28" min="1" max="120"
+            style="width:100%; border:1.5px solid var(--border); border-radius:var(--radius-sm); padding:10px 12px; font-size:13px; font-family:'Nunito',sans-serif; outline:none; margin-bottom:8px;" />
+          <button class="btn-primary" style="width:100%; font-size:13px; padding:10px;"
+            onclick="showSuccess('Idade atualizada com sucesso! ✅')">Salvar alteração</button>
+        </div>
+
+        <button class="profile-menu-item" onclick="toggleProfileItem('priv-panel')">
+          <div class="pmi-icon">🔒</div>
+          <div class="pmi-body">
+            <h5>Privacidade e Transparência</h5>
+            <p>Saiba como seus dados são utilizados</p>
+          </div>
+          <span class="pmi-arrow" id="arrow-priv">›</span>
+        </button>
+        <div id="priv-panel" class="profile-expand-panel" style="display:none;">
+          <div class="pep-row">
+            <span>📊 Compartilhar dados anônimos</span>
+            <label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+          </div>
+          <div class="pep-row">
+            <span>📢 Receber comunicados</span>
+            <label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+          </div>
+          <p style="font-size:11px; color:var(--text-light); margin-top:6px; line-height:1.5;">Seus dados são protegidos
+            conforme a LGPD. Nunca compartilhamos informações pessoais sem seu consentimento.</p>
+        </div>
+
+        <button class="profile-menu-item" onclick="toggleProfileItem('seg-panel')">
+          <div class="pmi-icon">🛡️</div>
+          <div class="pmi-body">
+            <h5>Segurança da Conta</h5>
+            <p>Gerencie a segurança da sua conta</p>
+          </div>
+          <span class="pmi-arrow" id="arrow-seg">›</span>
+        </button>
+        <div id="seg-panel" class="profile-expand-panel" style="display:none;">
+          <p style="font-size:12px; color:var(--text-light); margin-bottom:8px;">Alterar senha:</p>
+          <input type="password" placeholder="Senha atual"
+            style="width:100%; border:1.5px solid var(--border); border-radius:var(--radius-sm); padding:10px 12px; font-size:13px; font-family:'Nunito',sans-serif; outline:none; margin-bottom:8px;" />
+          <input type="password" placeholder="Nova senha"
+            style="width:100%; border:1.5px solid var(--border); border-radius:var(--radius-sm); padding:10px 12px; font-size:13px; font-family:'Nunito',sans-serif; outline:none; margin-bottom:8px;" />
+          <input type="password" placeholder="Confirmar nova senha"
+            style="width:100%; border:1.5px solid var(--border); border-radius:var(--radius-sm); padding:10px 12px; font-size:13px; font-family:'Nunito',sans-serif; outline:none; margin-bottom:8px;" />
+          <button class="btn-primary" style="width:100%; font-size:13px; padding:10px;"
+            onclick="showSuccess('Senha atualizada com sucesso! 🔒')">Salvar nova senha</button>
+        </div>
+
+        <button class="profile-menu-item" onclick="toggleProfileItem('tel-panel')">
+          <div class="pmi-icon">📞</div>
+          <div class="pmi-body">
+            <h5>Telefone</h5>
+            <p>(61) 40002-8922</p>
+          </div>
+          <span class="pmi-arrow" id="arrow-tel">›</span>
+        </button>
+        <div id="tel-panel" class="profile-expand-panel" style="display:none;">
+          <p style="font-size:12px; color:var(--text-light); margin-bottom:8px;">Alterar telefone cadastrado:</p>
+          <input type="tel" placeholder="Novo telefone" value="(61) 40002-8922"
+            style="width:100%; border:1.5px solid var(--border); border-radius:var(--radius-sm); padding:10px 12px; font-size:13px; font-family:'Nunito',sans-serif; outline:none; margin-bottom:8px;" />
+          <button class="btn-primary" style="width:100%; font-size:13px; padding:10px;"
+            onclick="showSuccess('Telefone atualizado com sucesso! 📞')">Salvar alteração</button>
+        </div>
+
+        <button class="logout-btn" onclick="doLogout()">
+          → Sair da conta
+        </button>
+      </div>
+
+      <nav class="bottom-nav">
+        <button class="nav-item" onclick="goTo('screen-home')">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+          </svg>
+          Início
+        </button>
+        <button class="nav-item" onclick="goTo('screen-impact')">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M5 9v11H1V9h4zm6-5v16H7V4h4zm6 8v8h-4v-8h4zm4-7v15h-4V5h4z" />
+          </svg>
+          Impacto
+        </button>
+        <button class="nav-item" onclick="goTo('screen-contact')">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
+          </svg>
+          Contato
+        </button>
+        <button class="nav-item active" onclick="requireLogin('screen-profile')">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
+          </svg>
+          Perfil
+        </button>
+      </nav>
+    </div>
+
+    <!-- ═══════════════════════════════
+       SCREEN: DONATION (Choose method)
+  ═══════════════════════════════ -->
+    <div class="screen" id="screen-donation">
+      <div class="app-header">
+        <button class="back-btn" onclick="goBack()">‹</button>
+        <div class="logo">
+          <svg class="logo-icon" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="40" cy="40" r="40" fill="#2BBFB3" />
+            <path
+              d="M40 58 C40 58 22 46 22 33 C22 26 27.5 20.5 34 21 C37 21.5 39.5 23.5 40 25 C40.5 23.5 43 21.5 46 21 C52.5 20.5 58 26 58 33 C58 46 40 58 40 58Z"
+              fill="white" />
+            <path d="M30 16 C30 16 25 12 20 16 C18 17.5 17 20 18 22.5" stroke="white" stroke-width="2.5" fill="none"
+              stroke-linecap="round" />
+            <path d="M50 16 C50 16 55 12 60 16 C62 17.5 63 20 62 22.5" stroke="white" stroke-width="2.5" fill="none"
+              stroke-linecap="round" />
+          </svg>
+          AJUDA+
+        </div>
+      </div>
+
+      <div class="screen-body">
+        <h2 style="text-align:center; padding:16px 14px 6px; font-size:18px; font-weight:900; color:var(--text);">
+          Escolha seu Método de Doação</h2>
+
+        <div class="donation-grid">
+          <button class="donation-method" onclick="goTo('screen-pay-pix')">
+            <div class="dm-icon">
+              <!-- Pix logo SVG -->
+              <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+                <rect width="56" height="56" rx="12" fill="#2BBFB3" />
+                <path d="M28 10 L38 20 L28 30 L18 20 Z" fill="white" />
+                <path d="M28 26 L38 36 L28 46 L18 36 Z" fill="white" opacity="0.7" />
+                <path d="M10 18 L20 28 L10 38 L0 28 Z" fill="white" opacity="0.5" transform="translate(6,-2)" />
+                <path d="M30 18 L40 28 L30 38 L20 28 Z" fill="white" opacity="0.5" transform="translate(6,-2)" />
+              </svg>
+            </div>
+            <span class="dm-label">Pix</span>
+          </button>
+
+          <button class="donation-method" onclick="goTo('screen-pay-card')">
+            <div class="dm-icon">
+              <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+                <rect width="56" height="56" rx="12" fill="none" stroke="#ccc" stroke-width="2" />
+                <rect x="8" y="16" width="40" height="24" rx="4" fill="none" stroke="#333" stroke-width="2.5" />
+                <line x1="8" y1="24" x2="48" y2="24" stroke="#333" stroke-width="3" />
+                <rect x="12" y="29" width="10" height="6" rx="2" fill="#ccc" />
+              </svg>
+            </div>
+            <span class="dm-label">Cartão</span>
+          </button>
+
+          <button class="donation-method" onclick="goTo('screen-pay-boleto')">
+            <div class="dm-icon">
+              <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="12" width="2" height="32" fill="#111" />
+                <rect x="8" y="12" width="4" height="32" fill="#111" />
+                <rect x="14" y="12" width="2" height="32" fill="#111" />
+                <rect x="18" y="12" width="3" height="32" fill="#111" />
+                <rect x="23" y="12" width="2" height="32" fill="#111" />
+                <rect x="27" y="12" width="4" height="32" fill="#111" />
+                <rect x="33" y="12" width="2" height="32" fill="#111" />
+                <rect x="37" y="12" width="3" height="32" fill="#111" />
+                <rect x="42" y="12" width="2" height="32" fill="#111" />
+                <rect x="46" y="12" width="4" height="32" fill="#111" />
+              </svg>
+            </div>
+            <span class="dm-label">Boleto</span>
+          </button>
+
+          <button class="donation-method" onclick="goTo('screen-pay-paypal')">
+            <div class="dm-icon">
+              <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+                <text y="38" x="4" font-size="36" font-family="Arial" font-weight="900" fill="#003087">P</text>
+                <text y="38" x="22" font-size="36" font-family="Arial" font-weight="900" fill="#009cde">P</text>
+              </svg>
+            </div>
+            <span class="dm-label">PayPal</span>
+          </button>
+
+          <button class="donation-method" onclick="goTo('screen-donate-items')">
+            <div class="dm-icon">
+              <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 24 L28 14 L46 24 L46 46 L10 46 Z" fill="none" stroke="#2BBFB3" stroke-width="2.5" />
+                <path d="M10 24 L28 34 L46 24" fill="none" stroke="#2BBFB3" stroke-width="2.5" />
+                <line x1="28" y1="34" x2="28" y2="46" stroke="#2BBFB3" stroke-width="2.5" />
+                <path d="M22 10 C22 6 34 6 34 10 L36 14 L20 14 Z" fill="#2BBFB3" />
+              </svg>
+            </div>
+            <span class="dm-label">Doar Itens</span>
+          </button>
+
+          <button class="donation-method" onclick="goTo('screen-cash-donation')">
+            <div class="dm-icon">
+              <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="16" width="30" height="20" rx="3" fill="none" stroke="#2BBFB3" stroke-width="2.5" />
+                <circle cx="19" cy="26" r="5" fill="none" stroke="#2BBFB3" stroke-width="2" />
+                <rect x="18" y="28" width="30" height="20" rx="3" fill="none" stroke="#2BBFB3" stroke-width="2.5" />
+                <circle cx="33" cy="38" r="5" fill="none" stroke="#2BBFB3" stroke-width="2" />
+              </svg>
+            </div>
+            <span class="dm-label">Dinheiro</span>
+          </button>
+        </div>
+      </div>
+
+      <nav class="bottom-nav">
+        <button class="nav-item" onclick="goTo('screen-home')">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+          </svg>
+          Início
+        </button>
+        <button class="nav-item" onclick="goTo('screen-impact')">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M5 9v11H1V9h4zm6-5v16H7V4h4zm6 8v8h-4v-8h4zm4-7v15h-4V5h4z" />
+          </svg>
+          Impacto
+        </button>
+        <button class="nav-item" onclick="goTo('screen-contact')">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
+          </svg>
+          Contato
+        </button>
+        <button class="nav-item" onclick="requireLogin('screen-profile')">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
+          </svg>
+          Perfil
+        </button>
+      </nav>
+    </div>
+
+    <!-- ═══════════════════════════════
+       SCREEN: PAY PIX
+  ═══════════════════════════════ -->
+    <div class="screen" id="screen-pay-pix">
+      <div class="app-header">
+        <button class="back-btn" onclick="goBack()">‹</button>
+        <span style="font-size:16px; font-weight:800; color:var(--text);">Doação via Pix</span>
+      </div>
+      <div class="screen-body">
+        <div style="height:14px;"></div>
+        <div class="payment-amount-box" style="margin:0 14px;">
+          <p>Valor da sua doação</p>
+          <h2 id="pix-amount">R$ 50,00</h2>
+        </div>
+        <div style="padding:14px;">
+          <p style="font-size:13px; font-weight:700; color:var(--text); margin-bottom:8px;">Escolha um valor:</p>
+          <div class="amount-options">
+            <button class="amt-btn" onclick="setAmount('pix-amount', 10, this)">R$ 10</button>
+            <button class="amt-btn selected" onclick="setAmount('pix-amount', 50, this)">R$ 50</button>
+            <button class="amt-btn" onclick="setAmount('pix-amount', 100, this)">R$ 100</button>
+            <button class="amt-btn" onclick="setAmount('pix-amount', 200, this)">R$ 200</button>
+          </div>
+          <div style="margin-top:10px; display:flex; align-items:center; gap:8px;">
+            <span style="font-size:12px; font-weight:700; color:var(--text); white-space:nowrap;">Outro valor:</span>
+            <div
+              style="display:flex; align-items:center; border:1.5px solid var(--border); border-radius:99px; overflow:hidden; flex:1; background:var(--white);">
+              <span style="padding:0 10px; font-size:13px; font-weight:700; color:var(--text-mid);">R$</span>
+              <input type="number" id="pix-custom-value" placeholder="Digite o valor" min="1"
+                style="border:none; outline:none; font-size:13px; font-family:'Nunito',sans-serif; padding:8px 8px 8px 0; width:100%; background:transparent;"
+                oninput="setCustomAmount('pix-amount', this)" />
+            </div>
+          </div>
+        </div>
+        <div class="qr-container" style="margin:0 14px 14px;">
+          <p>Escaneie o QR Code com o app do seu banco</p>
+          <div class="qr-code">
+            <svg viewBox="0 0 170 170" xmlns="http://www.w3.org/2000/svg" id="qr-pix">
+              <!-- QR code visual SVG -->
+              <rect width="170" height="170" fill="white" />
+              <!-- Position Detection Patterns (top-left) -->
+              <rect x="10" y="10" width="50" height="50" rx="2" fill="#222" />
+              <rect x="17" y="17" width="36" height="36" rx="1" fill="white" />
+              <rect x="23" y="23" width="24" height="24" rx="1" fill="#222" />
+              <!-- Position Detection Pattern (top-right) -->
+              <rect x="110" y="10" width="50" height="50" rx="2" fill="#222" />
+              <rect x="117" y="17" width="36" height="36" rx="1" fill="white" />
+              <rect x="123" y="23" width="24" height="24" rx="1" fill="#222" />
+              <!-- Position Detection Pattern (bottom-left) -->
+              <rect x="10" y="110" width="50" height="50" rx="2" fill="#222" />
+              <rect x="17" y="117" width="36" height="36" rx="1" fill="white" />
+              <rect x="23" y="123" width="24" height="24" rx="1" fill="#222" />
+              <!-- Data modules (center pattern) -->
+              <rect x="70" y="10" width="6" height="6" fill="#222" />
+              <rect x="83" y="10" width="6" height="6" fill="#222" />
+              <rect x="70" y="23" width="6" height="6" fill="#222" />
+              <rect x="83" y="23" width="6" height="6" fill="#222" />
+              <rect x="70" y="36" width="6" height="6" fill="#222" />
+              <rect x="70" y="70" width="6" height="6" fill="#222" />
+              <rect x="83" y="70" width="6" height="6" fill="#222" />
+              <rect x="10" y="70" width="6" height="6" fill="#222" />
+              <rect x="23" y="70" width="6" height="6" fill="#222" />
+              <rect x="36" y="70" width="6" height="6" fill="#222" />
+              <rect x="110" y="70" width="6" height="6" fill="#222" />
+              <rect x="130" y="70" width="6" height="6" fill="#222" />
+              <rect x="150" y="70" width="6" height="6" fill="#222" />
+              <rect x="110" y="83" width="6" height="6" fill="#222" />
+              <rect x="123" y="83" width="6" height="6" fill="#222" />
+              <rect x="70" y="110" width="6" height="6" fill="#222" />
+              <rect x="83" y="110" width="6" height="6" fill="#222" />
+              <rect x="83" y="123" width="6" height="6" fill="#222" />
+              <rect x="70" y="136" width="6" height="6" fill="#222" />
+              <rect x="83" y="136" width="6" height="6" fill="#222" />
+              <rect x="70" y="150" width="6" height="6" fill="#222" />
+              <!-- More data modules -->
+              <rect x="110" y="96" width="6" height="6" fill="#222" />
+              <rect x="130" y="96" width="6" height="6" fill="#222" />
+              <rect x="123" y="110" width="6" height="6" fill="#222" />
+              <rect x="143" y="110" width="6" height="6" fill="#222" />
+              <rect x="110" y="123" width="6" height="6" fill="#222" />
+              <rect x="130" y="123" width="6" height="6" fill="#222" />
+              <rect x="110" y="136" width="6" height="6" fill="#222" />
+              <rect x="150" y="136" width="6" height="6" fill="#222" />
+              <rect x="123" y="150" width="6" height="6" fill="#222" />
+              <rect x="143" y="150" width="6" height="6" fill="#222" />
+              <!-- Pix logo center -->
+              <rect x="72" y="72" width="26" height="26" rx="4" fill="#2BBFB3" />
+              <path d="M85 78 L91 84 L85 90 L79 84 Z" fill="white" />
+            </svg>
+          </div>
+          <div class="qr-copy-code">
+            Chave Pix: ajuda@ajudamais.org.br
+          </div>
+          <button class="btn-primary"
+            onclick="showSuccess('Doação via Pix registrada! Obrigado pela sua generosidade. 💙')">Confirmar
+            Pagamento</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════
+       SCREEN: PAY CARD
+  ═══════════════════════════════ -->
+    <div class="screen" id="screen-pay-card">
+      <div class="app-header">
+        <button class="back-btn" onclick="goBack()">‹</button>
+        <span style="font-size:16px; font-weight:800; color:var(--text);">Doação por Cartão</span>
+      </div>
+      <div class="screen-body">
+        <div style="height:14px;"></div>
+        <div class="payment-amount-box" style="margin:0 14px 14px;">
+          <p>Valor da sua doação</p>
+          <h2 id="card-amount">R$ 50,00</h2>
+        </div>
+        <div style="padding:0 14px 8px;">
+          <p style="font-size:13px; font-weight:700; color:var(--text); margin-bottom:8px;">Escolha um valor:</p>
+          <div class="amount-options">
+            <button class="amt-btn" onclick="setAmount('card-amount', 10, this)">R$ 10</button>
+            <button class="amt-btn selected" onclick="setAmount('card-amount', 50, this)">R$ 50</button>
+            <button class="amt-btn" onclick="setAmount('card-amount', 100, this)">R$ 100</button>
+            <button class="amt-btn" onclick="setAmount('card-amount', 200, this)">R$ 200</button>
+          </div>
+          <div style="margin-top:10px; display:flex; align-items:center; gap:8px;">
+            <span style="font-size:12px; font-weight:700; color:var(--text); white-space:nowrap;">Outro valor:</span>
+            <div
+              style="display:flex; align-items:center; border:1.5px solid var(--border); border-radius:99px; overflow:hidden; flex:1; background:var(--white);">
+              <span style="padding:0 10px; font-size:13px; font-weight:700; color:var(--text-mid);">R$</span>
+              <input type="number" placeholder="Digite o valor" min="1"
+                style="border:none; outline:none; font-size:13px; font-family:'Nunito',sans-serif; padding:8px 8px 8px 0; width:100%; background:transparent;"
+                oninput="setCustomAmount('card-amount', this)" />
+            </div>
+          </div>
+        </div>
+        <div class="card-form">
+          <div class="input-group">
+            <label>Nome no cartão</label>
+            <input type="text" placeholder="Ex: JOAO A SILVA" />
+          </div>
+          <div class="input-group">
+            <label>Número do cartão</label>
+            <input type="text" placeholder="0000 0000 0000 0000" maxlength="19" />
+          </div>
+          <div class="input-row">
+            <div class="input-group">
+              <label>Validade</label>
+              <input type="text" placeholder="MM/AA" maxlength="5" />
+            </div>
+            <div class="input-group">
+              <label>CVV</label>
+              <input type="text" placeholder="123" maxlength="3" />
+            </div>
+          </div>
+          <div class="input-group">
+            <label>Parcelas</label>
+            <select>
+              <option>1x sem juros</option>
+              <option>2x sem juros</option>
+              <option>3x sem juros</option>
+            </select>
+          </div>
+          <button class="btn-primary"
+            onclick="showSuccess('Doação por cartão realizada com sucesso! Obrigado! 💙')">Confirmar Doação</button>
+          <div style="height:8px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════
+       SCREEN: PAY BOLETO
+  ═══════════════════════════════ -->
+    <div class="screen" id="screen-pay-boleto">
+      <div class="app-header">
+        <button class="back-btn" onclick="goBack()">‹</button>
+        <span style="font-size:16px; font-weight:800; color:var(--text);">Doação via Boleto</span>
+      </div>
+      <div class="screen-body">
+        <div style="height:14px;"></div>
+        <div class="payment-amount-box" style="margin:0 14px 14px;">
+          <p>Valor da sua doação</p>
+          <h2 id="boleto-amount">R$ 50,00</h2>
+        </div>
+        <div style="padding:0 14px 8px;">
+          <div class="amount-options">
+            <button class="amt-btn" onclick="setAmount('boleto-amount', 10, this)">R$ 10</button>
+            <button class="amt-btn selected" onclick="setAmount('boleto-amount', 50, this)">R$ 50</button>
+            <button class="amt-btn" onclick="setAmount('boleto-amount', 100, this)">R$ 100</button>
+            <button class="amt-btn" onclick="setAmount('boleto-amount', 200, this)">R$ 200</button>
+          </div>
+          <div style="margin-top:10px; display:flex; align-items:center; gap:8px;">
+            <span style="font-size:12px; font-weight:700; color:var(--text); white-space:nowrap;">Outro valor:</span>
+            <div
+              style="display:flex; align-items:center; border:1.5px solid var(--border); border-radius:99px; overflow:hidden; flex:1; background:var(--white);">
+              <span style="padding:0 10px; font-size:13px; font-weight:700; color:var(--text-mid);">R$</span>
+              <input type="number" placeholder="Digite o valor" min="1"
+                style="border:none; outline:none; font-size:13px; font-family:'Nunito',sans-serif; padding:8px 8px 8px 0; width:100%; background:transparent;"
+                oninput="setCustomAmount('boleto-amount', this)" />
+            </div>
+          </div>
+        </div>
+        <div class="boleto-box">
+          <h4 style="font-size:15px; font-weight:800; color:var(--text); margin-bottom:6px;">Seu boleto foi gerado!</h4>
+          <p style="font-size:12px; color:var(--text-light); margin-bottom:4px;">Vencimento: <strong>10/06/2026</strong>
+          </p>
+          <div class="boleto-barcode">
+            <div class="bar" style="width:1px;"></div>
+            <div class="bar" style="width:3px;"></div>
+            <div class="bar" style="width:1px;"></div>
+            <div class="bar" style="width:2px;"></div>
+            <div class="bar" style="width:3px;"></div>
+            <div class="bar" style="width:1px;"></div>
+            <div class="bar" style="width:2px;"></div>
+            <div class="bar" style="width:1px;"></div>
+            <div class="bar" style="width:3px;"></div>
+            <div class="bar" style="width:2px;"></div>
+            <div class="bar" style="width:1px;"></div>
+            <div class="bar" style="width:3px;"></div>
+            <div class="bar" style="width:1px;"></div>
+            <div class="bar" style="width:2px;"></div>
+            <div class="bar" style="width:1px;"></div>
+            <div class="bar" style="width:3px;"></div>
+            <div class="bar" style="width:2px;"></div>
+            <div class="bar" style="width:1px;"></div>
+            <div class="bar" style="width:3px;"></div>
+            <div class="bar" style="width:1px;"></div>
+            <div class="bar" style="width:2px;"></div>
+            <div class="bar" style="width:3px;"></div>
+            <div class="bar" style="width:1px;"></div>
+            <div class="bar" style="width:2px;"></div>
+            <div class="bar" style="width:1px;"></div>
+            <div class="bar" style="width:3px;"></div>
+            <div class="bar" style="width:2px;"></div>
+            <div class="bar" style="width:1px;"></div>
+            <div class="bar" style="width:3px;"></div>
+            <div class="bar" style="width:1px;"></div>
+            <div class="bar" style="width:2px;"></div>
+            <div class="bar" style="width:3px;"></div>
+          </div>
+          <div class="qr-copy-code" style="font-size:10px; text-align:center;">
+            34191.79001 01043.510047 91020.150008 9 98260000005000
+          </div>
+          <button class="btn-primary" style="margin-top:10px;"
+            onclick="showSuccess('Boleto copiado! Pague até o vencimento para confirmar sua doação. 💙')">Copiar Código
+            de Barras</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════
+       SCREEN: PAY PAYPAL
+  ═══════════════════════════════ -->
+    <div class="screen" id="screen-pay-paypal">
+      <div class="app-header">
+        <button class="back-btn" onclick="goBack()">‹</button>
+        <span style="font-size:16px; font-weight:800; color:var(--text);">Doação via PayPal</span>
+      </div>
+      <div class="screen-body">
+        <div style="height:14px;"></div>
+        <div class="payment-amount-box" style="margin:0 14px 14px; background:#003087;">
+          <p>Valor da sua doação</p>
+          <h2 id="paypal-amount">R$ 50,00</h2>
+        </div>
+        <div style="padding:0 14px 8px;">
+          <div class="amount-options">
+            <button class="amt-btn" onclick="setAmount('paypal-amount', 10, this)">R$ 10</button>
+            <button class="amt-btn selected" onclick="setAmount('paypal-amount', 50, this)">R$ 50</button>
+            <button class="amt-btn" onclick="setAmount('paypal-amount', 100, this)">R$ 100</button>
+            <button class="amt-btn" onclick="setAmount('paypal-amount', 200, this)">R$ 200</button>
+          </div>
+          <div style="margin-top:10px; display:flex; align-items:center; gap:8px;">
+            <span style="font-size:12px; font-weight:700; color:var(--text); white-space:nowrap;">Outro valor:</span>
+            <div
+              style="display:flex; align-items:center; border:1.5px solid var(--border); border-radius:99px; overflow:hidden; flex:1; background:var(--white);">
+              <span style="padding:0 10px; font-size:13px; font-weight:700; color:var(--text-mid);">R$</span>
+              <input type="number" placeholder="Digite o valor" min="1"
+                style="border:none; outline:none; font-size:13px; font-family:'Nunito',sans-serif; padding:8px 8px 8px 0; width:100%; background:transparent;"
+                oninput="setCustomAmount('paypal-amount', this)" />
+            </div>
+          </div>
+        </div>
+        <div class="qr-container" style="margin:0 14px 14px; text-align:center;">
+          <p style="margin-bottom:14px;">Escaneie para pagar via PayPal</p>
+          <div class="qr-code" style="margin-bottom:14px;">
+            <svg viewBox="0 0 170 170" xmlns="http://www.w3.org/2000/svg">
+              <rect width="170" height="170" fill="white" />
+              <rect x="10" y="10" width="50" height="50" rx="2" fill="#003087" />
+              <rect x="17" y="17" width="36" height="36" rx="1" fill="white" />
+              <rect x="23" y="23" width="24" height="24" rx="1" fill="#003087" />
+              <rect x="110" y="10" width="50" height="50" rx="2" fill="#003087" />
+              <rect x="117" y="17" width="36" height="36" rx="1" fill="white" />
+              <rect x="123" y="23" width="24" height="24" rx="1" fill="#003087" />
+              <rect x="10" y="110" width="50" height="50" rx="2" fill="#003087" />
+              <rect x="17" y="117" width="36" height="36" rx="1" fill="white" />
+              <rect x="23" y="123" width="24" height="24" rx="1" fill="#003087" />
+              <rect x="70" y="10" width="6" height="6" fill="#003087" />
+              <rect x="83" y="23" width="6" height="6" fill="#009cde" />
+              <rect x="70" y="70" width="6" height="6" fill="#003087" />
+              <rect x="83" y="70" width="6" height="6" fill="#009cde" />
+              <rect x="10" y="70" width="6" height="6" fill="#003087" />
+              <rect x="36" y="70" width="6" height="6" fill="#003087" />
+              <rect x="110" y="70" width="6" height="6" fill="#003087" />
+              <rect x="150" y="70" width="6" height="6" fill="#009cde" />
+              <rect x="70" y="110" width="6" height="6" fill="#003087" />
+              <rect x="83" y="136" width="6" height="6" fill="#009cde" />
+              <rect x="110" y="110" width="6" height="6" fill="#003087" />
+              <rect x="143" y="150" width="6" height="6" fill="#009cde" />
+              <rect x="72" y="72" width="26" height="26" rx="4" fill="#003087" />
+              <text x="78" y="90" font-size="18" font-family="Arial" font-weight="900" fill="white">P</text>
+            </svg>
+          </div>
+          <p style="font-size:11px; color:var(--text-light); margin-bottom:14px;">Ou acesse paypal.me/ajudamais</p>
+          <button class="btn-primary" style="background:#009cde;"
+            onclick="showSuccess('Redirecionando para o PayPal... Doação confirmada! 💙')">Abrir PayPal</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════
+       SCREEN: DONATE ITEMS
+  ═══════════════════════════════ -->
+    <div class="screen" id="screen-donate-items">
+      <div class="app-header">
+        <button class="back-btn" onclick="goBack()">‹</button>
+        <span style="font-size:16px; font-weight:800; color:var(--text);">Doar Itens</span>
+      </div>
+      <div class="screen-body">
+        <div class="items-form">
+          <div>
+            <label>Itens doados</label>
+            <textarea
+              placeholder="Ex: 5 cestas básicas, 10 pacotes de fraldas">5 cestas básicas, 10 pacotes de fraldas</textarea>
+          </div>
+          <div>
+            <label>Local de Retirada</label>
+            <input type="text" placeholder="Local de Retirada" />
+          </div>
+          <div>
+            <label>Ponto de Entrega ℹ️</label>
+            <input type="text" placeholder="Ponto de Entrega" />
+            <p class="hint">Confirmamos o lote de itens doados. <a href="#">Preencha</a> os itens doados.</p>
+          </div>
+          <button class="btn-primary"
+            onclick="showSuccess('Doação de itens registrada! Nossa equipe entrará em contato para confirmar a coleta. 💙')">Continuar
+            com a Doação</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════
+       SCREEN: VOLUNTEER
+  ═══════════════════════════════ -->
+    <div class="screen" id="screen-volunteer">
+      <div class="app-header">
+        <button class="back-btn" onclick="goBack()">‹</button>
+        <div class="logo">
+          <svg class="logo-icon" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="40" cy="40" r="40" fill="#2BBFB3" />
+            <path
+              d="M40 58 C40 58 22 46 22 33 C22 26 27.5 20.5 34 21 C37 21.5 39.5 23.5 40 25 C40.5 23.5 43 21.5 46 21 C52.5 20.5 58 26 58 33 C58 46 40 58 40 58Z"
+              fill="white" />
+            <path d="M30 16 C30 16 25 12 20 16 C18 17.5 17 20 18 22.5" stroke="white" stroke-width="2.5" fill="none"
+              stroke-linecap="round" />
+            <path d="M50 16 C50 16 55 12 60 16 C62 17.5 63 20 62 22.5" stroke="white" stroke-width="2.5" fill="none"
+              stroke-linecap="round" />
+          </svg>
+          AJUDA+
+        </div>
+      </div>
+      <div class="screen-body">
+        <h2 style="text-align:center; padding:14px 14px 10px; font-size:18px; font-weight:900;">Seja um voluntário</h2>
+        <div class="volunteer-form">
+          <div class="vol-counter-box">
+            <div class="vc-icon">👥</div>
+            <div class="vc-right">
+              <div class="vc-label">Voluntários Ativos:</div>
+              <div class="vc-num">1.280</div>
+            </div>
+          </div>
+
+          <p style="font-size:14px; font-weight:800; color:var(--text);">Complete seus dados</p>
+          <input type="text" placeholder="Nome"
+            style="border:1.5px solid var(--border); border-radius:var(--radius-sm); padding:12px 14px; font-size:14px; font-family:'Nunito',sans-serif; outline:none;" />
+          <input type="email" placeholder="E-mail"
+            style="border:1.5px solid var(--border); border-radius:var(--radius-sm); padding:12px 14px; font-size:14px; font-family:'Nunito',sans-serif; outline:none;" />
+          <select
+            style="border:1.5px solid var(--border); border-radius:var(--radius-sm); padding:12px 14px; font-size:14px; font-family:'Nunito',sans-serif; outline:none; background:white;">
+            <option value="">Cidade</option>
+            <option>São Paulo - SP</option>
+            <option>Rio de Janeiro - RJ</option>
+            <option>Porto Alegre - RS</option>
+            <option>Belo Horizonte - MG</option>
+            <option>Curitiba - PR</option>
+            <option>Outra</option>
+          </select>
+
+          <div class="avail-label">Disponibilidade</div>
+          <div class="checkbox-item"><input type="checkbox" id="seg"><label for="seg"><strong>Seg:</strong> Manhã, tarde
+              ou noite</label></div>
+          <div class="checkbox-item"><input type="checkbox" id="ter"><label for="ter"><strong>Terça:</strong> Manhã,
+              tarde ou noite</label></div>
+          <div class="checkbox-item"><input type="checkbox" id="qua"><label for="qua"><strong>Quarta:</strong> Manhã,
+              tarde ou noite</label></div>
+          <div class="checkbox-item"><input type="checkbox" id="qui"><label for="qui"><strong>Quinta:</strong> Manhã,
+              tarde ou noite</label></div>
+          <div class="checkbox-item"><input type="checkbox" id="sex"><label for="sex"><strong>Sex:</strong> Manhã, tarde
+              ou noite</label></div>
+          <div class="checkbox-item"><input type="checkbox" id="sab"><label for="sab"><strong>Sáb/Dom:</strong> Manhã,
+              tarde ou noite</label></div>
+
+          <button class="btn-primary"
+            onclick="showSuccess('Inscrição realizada! Bem-vindo(a) à equipe de voluntários do AJUDA+! 💙')">Concluir
+            Inscrição</button>
+          <p class="vol-privacy">Todas as ONGs em conformidade com a <a href="#">Política de Privacidade</a></p>
+          <div style="height:4px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════
+       SCREEN: DIVULGAÇÃO
+  ═══════════════════════════════ -->
+    <div class="screen" id="screen-divulgacao">
+      <div class="app-header">
+        <div class="logo">
+          <svg class="logo-icon" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="40" cy="40" r="40" fill="#2BBFB3" />
+            <path
+              d="M40 58 C40 58 22 46 22 33 C22 26 27.5 20.5 34 21 C37 21.5 39.5 23.5 40 25 C40.5 23.5 43 21.5 46 21 C52.5 20.5 58 26 58 33 C58 46 40 58 40 58Z"
+              fill="white" />
+            <path d="M30 16 C30 16 25 12 20 16 C18 17.5 17 20 18 22.5" stroke="white" stroke-width="2.5" fill="none"
+              stroke-linecap="round" />
+            <path d="M50 16 C50 16 55 12 60 16 C62 17.5 63 20 62 22.5" stroke="white" stroke-width="2.5" fill="none"
+              stroke-linecap="round" />
+          </svg>
+          AJUDA+
+        </div>
+      </div>
+      <div class="screen-body">
+        <div class="page-title">Divulgação</div>
+        <div class="page-subtitle">Siga, curta e compartilhe!</div>
+
+        <div class="social-card">
+          <div class="sc-head">
+            <div class="sc-logo" style="background:#1877f2;">
+              <svg viewBox="0 0 48 48" width="36" height="36">
+                <circle cx="24" cy="24" r="24" fill="#1877f2" />
+                <path d="M31 24h-5v16h-6V24h-4v-6h4v-3c0-4 2-7 7-7h4v6h-3c-1 0-2 .4-2 2v2h5l-1 6z" fill="white" />
+              </svg>
+            </div>
+            <div>
+              <h4>Facebook</h4>
+              <p>Curta nossa página e acompanhe nossas ações.</p>
+            </div>
+          </div>
+          <button class="btn-primary"
+            onclick="showSuccess('Obrigado por seguir o AJUDA+ no Facebook! 💙')">Seguir</button>
+        </div>
+
+        <div class="social-card">
+          <div class="sc-head">
+            <div class="sc-logo"
+              style="background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); border-radius:50%;">
+              <svg viewBox="0 0 48 48" width="36" height="36">
+                <circle cx="24" cy="24" r="24" fill="none" />
+                <rect x="10" y="10" width="28" height="28" rx="8" stroke="white" stroke-width="2.5" fill="none" />
+                <circle cx="24" cy="24" r="7" stroke="white" stroke-width="2.5" fill="none" />
+                <circle cx="33" cy="15" r="2" fill="white" />
+              </svg>
+            </div>
+            <div>
+              <h4>Instagram</h4>
+              <p>Veja histórias, bastidores e ações em tempo real.</p>
+            </div>
+          </div>
+          <button class="btn-primary" style="background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);"
+            onclick="showSuccess('Obrigado por seguir o AJUDA+ no Instagram! 💙')">Seguir</button>
+        </div>
+
+        <div class="social-card" style="margin-bottom:14px;">
+          <div class="sc-head">
+            <div class="sc-logo" style="background:#1da1f2; border-radius:50%;">
+              <svg viewBox="0 0 48 48" width="36" height="36">
+                <circle cx="24" cy="24" r="24" fill="#1da1f2" />
+                <path
+                  d="M38 16c-1 .5-2.2.8-3.4.9 1.2-.7 2.1-1.9 2.6-3.2-1.1.7-2.4 1.2-3.7 1.4A5.9 5.9 0 0024 21c0 .5.1.9.2 1.4-4.9-.2-9.2-2.6-12.1-6.2-.5.9-.8 1.9-.8 3 0 2 1 3.8 2.6 4.8-1 0-1.9-.3-2.7-.7v.1c0 2.8 2 5.2 4.6 5.7-.5.1-1 .2-1.5.2-.4 0-.7 0-1.1-.1.7 2.3 2.8 3.9 5.3 4-1.9 1.5-4.4 2.4-7 2.4-.5 0-.9 0-1.4-.1 2.5 1.6 5.5 2.6 8.7 2.6 10.5 0 16.2-8.7 16.2-16.2v-.7c1.1-.8 2.1-1.8 2.9-3z"
+                  fill="white" />
+              </svg>
+            </div>
+            <div>
+              <h4>Twitter</h4>
+              <p>Acompanhe notícias e atualizações rápidas.</p>
+            </div>
+          </div>
+          <button class="btn-primary" style="background:#1da1f2;"
+            onclick="showSuccess('Obrigado por seguir o AJUDA+ no Twitter! 💙')">Seguir</button>
+        </div>
+      </div>
+
+      <nav class="bottom-nav">
+        <button class="nav-item active" onclick="goTo('screen-home')">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+          </svg>
+          Início
+        </button>
+        <button class="nav-item" onclick="goTo('screen-impact')">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M5 9v11H1V9h4zm6-5v16H7V4h4zm6 8v8h-4v-8h4zm4-7v15h-4V5h4z" />
+          </svg>
+          Impacto
+        </button>
+        <button class="nav-item" onclick="goTo('screen-contact')">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
+          </svg>
+          Contato
+        </button>
+        <button class="nav-item" onclick="requireLogin('screen-profile')">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" />
+          </svg>
+          Perfil
+        </button>
+      </nav>
+    </div>
+
+    <!-- ═══════════════════════════════
+       SCREEN: CASH DONATION
+  ═══════════════════════════════ -->
+    <div class="screen" id="screen-cash-donation">
+      <div class="app-header">
+        <button class="back-btn" onclick="goBack()">‹</button>
+        <span style="font-size:16px; font-weight:800; color:var(--text);">Doação em Dinheiro</span>
+      </div>
+      <div class="screen-body">
+        <div class="cash-intro">
+          <h4>💵 Doe dinheiro vivo para quem mais precisa</h4>
+          <p>Entendemos que nem todos têm acesso a cartões ou internet banking. Por isso, criamos formas de você
+            entregar sua doação pessoalmente a instituições parceiras.</p>
+        </div>
+
+        <div style="padding:14px 14px 6px;">
+          <p style="font-size:15px; font-weight:800; color:var(--text);">Como funciona?</p>
+        </div>
+
+        <div class="cash-step">
+          <div class="cs-num">1</div>
+          <div class="cs-body">
+            <h5>Encontre um Ponto de Coleta</h5>
+            <p>Localize o ponto parceiro mais próximo de você — supermercados, farmácias, igrejas e postos de saúde
+              participantes.</p>
+            <button class="cs-map-btn" onclick="goTo('screen-cash-map')">📍 Ver pontos próximos</button>
+          </div>
+        </div>
+
+        <div class="cash-step">
+          <div class="cs-num">2</div>
+          <div class="cs-body">
+            <h5>Entregue seu envelope</h5>
+            <p>Coloque o dinheiro em um envelope e informe ao atendente que é uma doação para o AJUDA+. Você receberá um
+              comprovante impresso.</p>
+          </div>
+        </div>
+
+        <div class="cash-step">
+          <div class="cs-num">3</div>
+          <div class="cs-body">
+            <h5>Registre sua doação (opcional)</h5>
+            <p>Com o número do comprovante, você pode registrar aqui no app e acompanhar o impacto da sua contribuição
+              em tempo real.</p>
+          </div>
+        </div>
+
+        <div class="cash-form-section">
+          <h5>Registrar comprovante</h5>
+          <input type="text" placeholder="Número do comprovante (ex: AJ-2024-0012)" />
+          <input type="number" placeholder="Valor doado (R$)" />
+          <select>
+            <option value="">Selecione o ponto de coleta</option>
+            <option>Supermercado Extra - Av. Paulista</option>
+            <option>Farmácia Drogasil - Centro</option>
+            <option>Igreja São José - Bairro Jardim</option>
+            <option>Posto de Saúde - UBS Central</option>
+          </select>
+          <button class="btn-primary"
+            onclick="showSuccess('Doação registrada com sucesso! Muito obrigado pela sua generosidade! 💙')">Registrar
+            Doação</button>
+          <div style="height:4px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════
+       SCREEN: CASH MAP (pontos de coleta)
+  ═══════════════════════════════ -->
+    <div class="screen" id="screen-cash-map">
+      <div class="app-header">
+        <button class="back-btn" onclick="goBack()">‹</button>
+        <span style="font-size:16px; font-weight:800; color:var(--text);">Pontos de Coleta</span>
+      </div>
+      <div class="screen-body">
+        <div
+          style="margin:14px 14px 0; background:var(--teal-light); border-radius:var(--radius); padding:14px; display:flex; gap:10px; align-items:center;">
+          <span style="font-size:22px;">📍</span>
+          <div>
+            <p style="font-size:13px; font-weight:700; color:var(--text);">Pontos próximos de você</p>
+            <p style="font-size:11px; color:var(--text-light); margin-top:2px;">São Paulo, SP — Atualizado agora</p>
+          </div>
+        </div>
+
+        <!-- Map placeholder -->
+        <div
+          style="margin:12px 14px 0; height:160px; background:linear-gradient(135deg,#e8f5e9,#e3f2fd); border-radius:var(--radius); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;">
+          <div style="position:absolute; inset:0; background:url('data:image/svg+xml,<svg xmlns=\"
+            http://www.w3.org/2000/svg\" viewBox=\"0 0 400 200\">
+            <line x1=\"0\" y1=\"50\" x2=\"400\" y2=\"50\" stroke=\"%23ccc\" stroke-width=\"1\" />
+            <line x1=\"0\" y1=\"100\" x2=\"400\" y2=\"100\" stroke=\"%23ccc\" stroke-width=\"1\" />
+            <line x1=\"0\" y1=\"150\" x2=\"400\" y2=\"150\" stroke=\"%23ccc\" stroke-width=\"1\" />
+            <line x1=\"100\" y1=\"0\" x2=\"100\" y2=\"200\" stroke=\"%23ccc\" stroke-width=\"1\" />
+            <line x1=\"200\" y1=\"0\" x2=\"200\" y2=\"200\" stroke=\"%23ccc\" stroke-width=\"1\" />
+            <line x1=\"300\" y1=\"0\" x2=\"300\" y2=\"200\" stroke=\"%23ccc\" stroke-width=\"1\" /></svg>');
+            opacity:.4;">
+          </div>
+          <div style="position:relative; text-align:center; color:var(--teal);">
+            <div style="font-size:36px;">🗺️</div>
+            <div style="font-size:12px; font-weight:700; margin-top:6px;">Mapa de pontos parceiros</div>
+          </div>
+          <!-- Pin markers -->
+          <div style="position:absolute; top:30%; left:25%; font-size:22px;">📍</div>
+          <div style="position:absolute; top:50%; left:55%; font-size:22px;">📍</div>
+          <div style="position:absolute; top:20%; right:20%; font-size:22px;">📍</div>
+        </div>
+
+        <div style="padding:14px 14px 6px; font-size:15px; font-weight:800; color:var(--text);">Mais próximos</div>
+
+        <div class="nearby-points">
+          <div class="np-item">
+            <div class="np-icon">🛒</div>
+            <div class="np-body">
+              <h6>Supermercado Extra</h6>
+              <p>Av. Paulista, 1234 — Bela Vista</p>
+              <div class="np-dist">📍 0,8 km · Seg-Dom 7h–22h</div>
+            </div>
+          </div>
+          <div class="np-item">
+            <div class="np-icon">💊</div>
+            <div class="np-body">
+              <h6>Farmácia Drogasil</h6>
+              <p>R. Augusta, 987 — Consolação</p>
+              <div class="np-dist">📍 1,2 km · Aberto 24h</div>
+            </div>
+          </div>
+          <div class="np-item">
+            <div class="np-icon">⛪</div>
+            <div class="np-body">
+              <h6>Igreja São José</h6>
+              <p>R. das Flores, 56 — Centro</p>
+              <div class="np-dist">📍 1,9 km · Ter-Dom 8h–18h</div>
+            </div>
+          </div>
+          <div class="np-item" style="margin-bottom:14px;">
+            <div class="np-icon">🏥</div>
+            <div class="np-body">
+              <h6>UBS Central</h6>
+              <p>Av. Brasil, 400 — República</p>
+              <div class="np-dist">📍 2,3 km · Seg-Sex 7h–17h</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════════════════
+       SUCCESS MODAL
+  ════════════════ -->
+    <div class="modal-overlay" id="success-modal">
+      <div class="modal-box">
+        <div class="modal-icon">✅</div>
+        <h3>Sucesso!</h3>
+        <p id="modal-msg">Operação realizada com sucesso.</p>
+        <button class="btn-primary" onclick="closeModal()">Voltar ao Início</button>
+      </div>
+    </div>
+
+  </div><!-- /phone -->
+
+  <script>
+    // ── State ──
+    let isLoggedIn = false;
+    let pendingScreen = null;
+    let screenHistory = ['screen-home'];
+
+    // ── Navigation ──
+    function goTo(id) {
+      const all = document.querySelectorAll('.screen');
+      all.forEach(s => s.classList.remove('active'));
+      const target = document.getElementById(id);
+      if (target) {
+        target.classList.add('active');
+        // Scroll target body to top
+        const body = target.querySelector('.screen-body');
+        if (body) body.scrollTop = 0;
+        // Push history
+        if (screenHistory[screenHistory.length - 1] !== id) {
+          screenHistory.push(id);
+        }
+      }
+      updateNav(id);
+    }
+
+    function goBack() {
+      if (screenHistory.length > 1) {
+        screenHistory.pop();
+        const prev = screenHistory[screenHistory.length - 1];
+        const all = document.querySelectorAll('.screen');
+        all.forEach(s => s.classList.remove('active'));
+        const target = document.getElementById(prev);
+        if (target) target.classList.add('active');
+        updateNav(prev);
+      }
+    }
+
+    function updateNav(screenId) {
+      const navScreens = {
+        'screen-home': 0, 'screen-campaigns': 0, 'screen-divulgacao': 0,
+        'screen-impact': 1,
+        'screen-contact': 2,
+        'screen-profile': 3,
+      };
+      const allNavs = document.querySelectorAll('.nav-item');
+      // reset all
+      allNavs.forEach(n => n.classList.remove('active'));
+      // find which tab
+      let tabIdx = -1;
+      if (screenId.includes('home') || screenId.includes('campaign') || screenId.includes('divulg')) tabIdx = 0;
+      else if (screenId.includes('impact')) tabIdx = 1;
+      else if (screenId.includes('contact')) tabIdx = 2;
+      else if (screenId.includes('profile')) tabIdx = 3;
+      // each screen has its own nav, activate appropriate
+      const currentScreen = document.querySelector('.screen.active');
+      if (currentScreen && tabIdx >= 0) {
+        const navItems = currentScreen.querySelectorAll('.nav-item');
+        if (navItems[tabIdx]) navItems[tabIdx].classList.add('active');
+      }
+    }
+
+    function toggleMenu() {
+      // Menu desativado conforme solicitado
+    }
+
+    // ── Auth ──
+    function requireLogin(targetScreen) {
+      if (isLoggedIn) {
+        goTo(targetScreen);
+      } else {
+        pendingScreen = targetScreen;
+        goTo('screen-login');
+      }
+    }
+
+    function doLogin() {
+      const email = document.getElementById('login-email').value.trim();
+      const pass = document.getElementById('login-password').value.trim();
+      const errEl = document.getElementById('login-error');
+      if (email === 'joao@ajuda.com' && pass === '1234') {
+        errEl.classList.remove('show');
+        isLoggedIn = true;
+        const dest = pendingScreen || 'screen-profile';
+        pendingScreen = null;
+        goTo(dest);
+      } else {
+        errEl.classList.add('show');
+      }
+    }
+
+    function demoLogin() {
+      document.getElementById('login-email').value = 'joao@ajuda.com';
+      document.getElementById('login-password').value = '1234';
+      doLogin();
+    }
+
+    function doLogout() {
+      isLoggedIn = false;
+      goTo('screen-home');
+    }
+
+    // Allow Enter key in login
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') {
+        const active = document.querySelector('.screen.active');
+        if (active && active.id === 'screen-login') doLogin();
+      }
+    });
+
+    // ── Payments ──
+    function setAmount(elId, val, btn) {
+      document.getElementById(elId).textContent = 'R$ ' + val + ',00';
+      const parent = btn.closest('.amount-options');
+      parent.querySelectorAll('.amt-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      // Limpa campo "outro valor" se existir
+      const screen = btn.closest('.screen-body');
+      if (screen) {
+        const customInput = screen.querySelector('input[type="number"]');
+        if (customInput) customInput.value = '';
+      }
+    }
+
+    // ── Campo "outro valor" nas doações ──
+    function setCustomAmount(elId, input) {
+      const val = parseFloat(input.value);
+      if (!isNaN(val) && val > 0) {
+        document.getElementById(elId).textContent = 'R$ ' + val.toFixed(2).replace('.', ',');
+        // Desmarca botões de valor pré-definido
+        const parent = input.closest('.screen-body');
+        if (parent) parent.querySelectorAll('.amt-btn').forEach(b => b.classList.remove('selected'));
+      }
+    }
+
+    // ── Success Modal ──
+    function showSuccess(msg) {
+      document.getElementById('modal-msg').textContent = msg;
+      document.getElementById('success-modal').classList.add('show');
+    }
+
+    function closeModal() {
+      document.getElementById('success-modal').classList.remove('show');
+      goTo('screen-home');
+    }
+
+    // ── FAQ interativo ──
+    function toggleFaq() {
+      const content = document.getElementById('faq-content');
+      const arrow = document.getElementById('faq-arrow');
+      const isOpen = content.style.display !== 'none';
+      content.style.display = isOpen ? 'none' : 'block';
+      arrow.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(90deg)';
+    }
+
+    function toggleFaqItem(item) {
+      const isOpen = item.classList.contains('open');
+      // Fecha todos
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+
+    function sendFaqQuestion() {
+      const input = document.getElementById('faq-input');
+      const sentMsg = document.getElementById('faq-sent');
+      if (input.value.trim() === '') return;
+      input.value = '';
+      sentMsg.style.display = 'block';
+      setTimeout(() => { sentMsg.style.display = 'none'; }, 3500);
+    }
+
+    // ── Perfil expandível ──
+    function toggleProfileItem(panelId) {
+      const panel = document.getElementById(panelId);
+      const keyMap = {
+        'config-panel': 'config',
+        'email-panel': 'email',
+        'idade-panel': 'idade',
+        'priv-panel': 'priv',
+        'seg-panel': 'seg',
+        'tel-panel': 'tel'
+      };
+      const key = keyMap[panelId] || panelId.replace('-panel', '');
+      const arrow = document.getElementById('arrow-' + key);
+      const isOpen = panel.style.display !== 'none';
+      // Fecha todos os painéis
+      document.querySelectorAll('.profile-expand-panel').forEach(p => p.style.display = 'none');
+      document.querySelectorAll('[id^="arrow-"]').forEach(a => a.style.transform = '');
+      if (!isOpen) {
+        panel.style.display = 'block';
+        if (arrow) arrow.style.transform = 'rotate(90deg)';
+      }
+    }
+
+    // ── Filtros dropdown de campanhas ──
+    let activeDropdown = null;
+    function toggleFilterDropdown(ddId, chip) {
+      const dd = document.getElementById(ddId);
+      const isOpen = dd.style.display !== 'none';
+      // Fecha todos
+      ['dd-regiao', 'dd-tragedia', 'dd-desastre'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = 'none';
+      });
+      document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+      if (!isOpen) {
+        dd.style.display = 'block';
+        chip.classList.add('active');
+      }
+    }
+
+    function selectFilter(ddId, value) {
+      const dd = document.getElementById(ddId);
+      const chips = document.querySelectorAll('.filter-chip');
+      const map = { 'dd-regiao': 0, 'dd-tragedia': 1, 'dd-desastre': 2 };
+      const icons = { 'dd-regiao': '📍', 'dd-tragedia': '⚠️', 'dd-desastre': '🌧️' };
+      const idx = map[ddId];
+      if (chips[idx]) chips[idx].textContent = icons[ddId] + ' ' + value + ' ▾';
+      dd.style.display = 'none';
+      chips.forEach(c => c.classList.remove('active'));
+      if (chips[idx]) chips[idx].classList.add('active');
+    }
+
+    // ── Animações botões de contato ──
+    function animateSupport(btn) {
+      btn.classList.add('btn-sending');
+      const original = btn.textContent;
+      btn.textContent = '⏳ Conectando...';
+      setTimeout(() => {
+        btn.textContent = '✅ Suporte conectado!';
+        setTimeout(() => {
+          btn.textContent = original;
+          btn.classList.remove('btn-sending');
+        }, 1800);
+      }, 600);
+    }
+
+    function animateTelegram(btn) {
+      btn.classList.add('btn-sending');
+      const original = btn.textContent;
+      btn.textContent = '✈️ Abrindo...';
+      setTimeout(() => {
+        btn.textContent = '✅ Telegram aberto!';
+        setTimeout(() => {
+          btn.textContent = original;
+          btn.classList.remove('btn-sending');
+        }, 1800);
+      }, 600);
+    }
+
+    // ── Init nav state ──
+    updateNav('screen-home');
+  </script>
+</body>
+
+</html>
