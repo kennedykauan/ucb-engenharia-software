@@ -1,0 +1,250 @@
+/*1. CONFIGURAÇÕES GERAIS & VARIÁVEIS*/
+:root {
+    --bg-global: #f4f4f4;       /* Fundo acinzentado do app */
+    --bg-card: #ffffff;         /* Fundo branco dos cards/banner */
+    --text-primary: #1c1c1c;    /* Cor dos títulos principais */
+    --text-secondary: #000000;  /* Cor de subtítulos e categorias */
+    --brand-orange: #ff9100;    /* Laranja dos destaques e preços */
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.fa-solid:hover{
+    cursor: pointer;
+}
+
+/* Container que limita o tamanho para a tela de um celular (Mobile) */
+.mobile-container {
+    width: 100%;
+    max-width: 412px;
+    background-color: var(--bg-global);
+    min-height: 100vh;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/*2. HEADER (Topo & Busca)*/
+.main-header {
+    margin-bottom: 24px;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.welcome-text h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.welcome-text p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: var(--brand-orange);
+    cursor: pointer;
+}
+
+/* Barra de Pesquisa */
+.search-container {
+    background-color: var(--bg-card);
+    display: flex;
+    align-items: center;
+    padding: 14px 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.search-icon {
+    color: var(--brand-orange);
+    margin-right: 12px;
+    font-size: 16px;
+}
+
+#search-input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+    color: var(--text-primary);
+}
+
+#search-input::placeholder {
+    color: var(--text-secondary);
+}
+
+/*3. BANNER DE PROMOÇÃO (Dose Dupla)*/
+.promo-banner {
+    background-color: var(--bg-card);
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    height: 160px;
+}
+
+.promo-banner:hover {
+    transform: scale(1.05);
+}
+
+.promo-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 55%;
+}
+
+.badge-promo {
+    background-color: var(--brand-orange);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 4px;
+    width: fit-content;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.promo-info h2 {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.promo-info p {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin: 4px 0 8px 0;
+}
+
+.promo-price {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--brand-orange);
+}
+
+/* Container que agrupa as imagens (Lado Laranja) */
+.promo-image-container {
+    background-color: var(--brand-orange);
+    width: 111px;
+    position: relative;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+/* Regra geral para as duas imagens dos hambúrgueres */
+.burger-image {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.burger-back {
+    left: -40px;
+    z-index: 1; 
+    width: 140px; 
+    filter:brightness(90%) 
+}
+
+.burger-front {
+    right: -60px;
+    z-index: 2; 
+    width: 170px;
+}
+
+/*4. GRID DE PRODUTOS & CARDS*/
+.products-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.product-card {
+    background-color: var(--bg-card);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover {
+  transform: scale(1.08); 
+}
+
+/* Container da foto do hambúrguer dentro do card */
+.product-thumb {
+    background-color: #fffaf4;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+
+.product-thumb img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Detalhes escritos do card */
+.product-details {
+    padding: 12px 16px 16px 16px;
+    cursor: pointer;
+}
+
+.product-details .category {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.product-details h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+
+.product-details .price {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--brand-orange);
+}
