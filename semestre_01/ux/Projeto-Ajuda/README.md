@@ -20,7 +20,7 @@ Para demonstrar o uso do aplicativo, a interface foi desenvolvida simulando a ex
 ## 🔗 Demo Online
 
 Você pode testar a aplicação diretamente no seu navegador através do GitHub Pages:
-👉 [Acessar o AJUDA+ Online](https://github.io/kennedykauan/ucb-engenharia-software/edit/main/semestre_01/ux/Projeto-Ajuda)
+👉 [Acessar o AJUDA+ Online](https://kennedykauan.github.io/ucb-engenharia-software/edit/main/semestre_01/ux/Projeto-Ajuda)
 
 ---
 
