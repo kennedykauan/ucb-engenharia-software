@@ -1,28 +1,43 @@
 #include <stdio.h>
 #include <string.h>
 
+//FUNCOES (modularizacao)
+
+// Procura um codigo no vetor. Retorna o indice ou -1 se nao achar
+int buscarIndice(int codigo[], int total, int busca) {
+    int i;
+    for (i = 0; i < total; i++) {
+        if (codigo[i] == busca) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+// Le um nome do teclado e remove o \n que o fgets deixa no final
+void lerNome(char destino[]) {
+    fgets(destino, 15, stdin);
+    destino[strcspn(destino, "\n")] = '\0';
+}
+
+// Mostra um unico registro na tela
+void mostrarRegistro(int codigo, char nome[]) {
+    printf("Codigo: %d | Nome: %s\n", codigo, nome);
+}
+
+// ===== FUNCOES DO CADASTRO =====
+
 // 1 - CADASTRAR: insere um registro por vez
 void cadastrar(int codigo[], char nome[][15], int *total) {
-
-    // Maximo de 5 registros, se ja tiver 5, nao cadastra mais
     if (*total == 5) {
         printf("\nCadastro cheio!\n");
         return;
     }
-
-    // Le o codigo e guarda na proxima posicao livre (indice = total)
     printf("\nDigite o codigo: ");
     scanf("%d", &codigo[*total]);
-    getchar(); // limpa o \n que sobrou no buffer depois do scanf
-    // Le o nome na mesma posicao
-
+    getchar(); // limpa o \n que sobrou no buffer
     printf("Digite o nome: ");
-    fgets(nome[*total], 15, stdin);
-
-    // Remove o \n que o fgets guarda no final da string
-    nome[*total][strcspn(nome[*total], "\n")] = '\0';
-
-    // Aumenta o total de registros (por isso recebe ponteiro)
+    lerNome(nome[*total]);
     (*total)++;
     printf("\nCadastro realizado com sucesso!\n");
 }
@@ -31,24 +46,15 @@ void cadastrar(int codigo[], char nome[][15], int *total) {
 void consultar(int codigo[], char nome[][15], int total) {
     int busca;
     int i;
-    int achou = 0; // 0 = nao encontrou, 1 = encontrou
 
-    // Pede o codigo que sera procurado
     printf("\nDigite o codigo para consulta: ");
     scanf("%d", &busca);
 
-    // Percorre apenas os registros que existem (0 ate total - 1)
-    for (i = 0; i < total; i++) {
-        if (codigo[i] == busca) {
-            printf("\nCodigo: %d", codigo[i]);
-            printf("\nNome: %s\n", nome[i]);
-            achou = 1;
-            break; // ja achou, nao precisa continuar procurando
-        }
-    }
-
-    // Se o laco terminou e nao achou nada, avisa o usuario
-    if (!achou) {
+    i = buscarIndice(codigo, total, busca);
+    if (i != -1) {
+        printf("\n");
+        mostrarRegistro(codigo[i], nome[i]);
+    } else {
         printf("\nCodigo nao encontrado!\n");
     }
 }
@@ -57,16 +63,14 @@ void consultar(int codigo[], char nome[][15], int total) {
 void listar(int codigo[], char nome[][15], int total) {
     int i;
 
-    // Se nao tem nenhum registro, avisa e sai da funcao
     if (total == 0) {
         printf("\nNenhum registro cadastrado!\n");
         return;
     }
 
-    // Mostra codigo e nome de cada registro
     printf("\n--- REGISTROS CADASTRADOS ---\n");
     for (i = 0; i < total; i++) {
-        printf("Codigo: %d | Nome: %s\n", codigo[i], nome[i]);
+        mostrarRegistro(codigo[i], nome[i]);
     }
 }
 
@@ -74,32 +78,19 @@ void listar(int codigo[], char nome[][15], int total) {
 void alterar(int codigo[], char nome[][15], int total) {
     int busca;
     int i;
-    int achou = 0;
 
-    // Pede o codigo do registro que sera alterado
     printf("\nDigite o codigo que sera alterado: ");
     scanf("%d", &busca);
 
-    for (i = 0; i < total; i++) {
-
-        if (codigo[i] == busca) {
-
-            // Achou: le os novos dados e sobrescreve na mesma posicao i
-            printf("Digite o novo codigo: ");
-            scanf("%d", &codigo[i]);
-            getchar(); // limpa o buffer
-
-            printf("Digite o novo nome: ");
-            fgets(nome[i], 15, stdin);
-            nome[i][strcspn(nome[i], "\n")] = '\0'; // tira o \n do nome
-
-            printf("\nRegistro alterado com sucesso!\n");
-            achou = 1;
-            break;
-        }
-    }
-
-    if (!achou) {
+    i = buscarIndice(codigo, total, busca);
+    if (i != -1) {
+        printf("Digite o novo codigo: ");
+        scanf("%d", &codigo[i]);
+        getchar();
+        printf("Digite o novo nome: ");
+        lerNome(nome[i]);
+        printf("\nRegistro alterado com sucesso!\n");
+    } else {
         printf("\nCodigo nao encontrado!\n");
     }
 }
@@ -109,30 +100,65 @@ void excluir(int codigo[], char nome[][15], int *total) {
     int busca;
     int i;
     int j;
-    int achou = 0;
 
-    // Pede o codigo do registro que sera excluido
     printf("\nDigite o codigo que sera excluido: ");
     scanf("%d", &busca);
 
-    for (i = 0; i < *total; i++) {
-
-        if (codigo[i] == busca) {
-            // Desloca os registros seguintes uma posicao para a esquerda,
-            // sobrescrevendo o registro que esta sendo excluido
-
-            for (j = i; j < *total - 1; j++) {
-                codigo[j] = codigo[j + 1];          // copia o codigo (int usa =)
-                strcpy(nome[j], nome[j + 1]);       // copia o nome (string usa strcpy)
-            }
-
-            (*total)--; // diminui a quantidade de registros
-            printf("\nRegistro excluido com sucesso!\n");
-            achou = 1;
-            break;
+    i = buscarIndice(codigo, *total, busca);
+    if (i != -1) {
+        // Desloca os registros seguintes uma posicao para a esquerda
+        for (j = i; j < *total - 1; j++) {
+            codigo[j] = codigo[j + 1];
+            strcpy(nome[j], nome[j + 1]);
         }
+        (*total)--;
+        printf("\nRegistro excluido com sucesso!\n");
+    } else {
+        printf("\nCodigo nao encontrado!\n");
     }
+}
 
-    if (!achou) {
-        printf("\nCodigo nao encontrado!\n");}
+// ===== PROGRAMA PRINCIPAL =====
+int main(void) {
+    int codigo[5];
+    char nome[5][15];
+    int total = 0;
+    int opcao;
+
+    do {
+        printf("\n\n===== MENU =====");
+        printf("\n1 - Cadastrar");
+        printf("\n2 - Consultar");
+        printf("\n3 - Listar");
+        printf("\n4 - Alterar");
+        printf("\n5 - Excluir");
+        printf("\n0 - Sair");
+        printf("\nEscolha uma opcao: ");
+        scanf("%d", &opcao);
+
+        switch (opcao) {
+            case 1:
+                cadastrar(codigo, nome, &total);
+                break;
+            case 2:
+                consultar(codigo, nome, total);
+                break;
+            case 3:
+                listar(codigo, nome, total);
+                break;
+            case 4:
+                alterar(codigo, nome, total);
+                break;
+            case 5:
+                excluir(codigo, nome, &total);
+                break;
+            case 0:
+                printf("\nEncerrando...\n");
+                break;
+            default:
+                printf("\nOpcao invalida!\n");
+        }
+    } while (opcao != 0);
+
+    return 0;
 }
