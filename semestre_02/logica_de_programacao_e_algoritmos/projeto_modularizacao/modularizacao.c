@@ -25,9 +25,9 @@ void mostrarRegistro(int codigo, char nome[]) {
     printf("Codigo: %d | Nome: %s\n", codigo, nome);
 }
 
-// ===== FUNCOES DO CADASTRO =====
+// FUNCOES DO CADASTRO
 
-// 1 - CADASTRAR: insere um registro por vez
+// CADASTRAR: insere um registro por vez
 void cadastrar(int codigo[], char nome[][15], int *total) {
     if (*total == 5) {
         printf("\nCadastro cheio!\n");
@@ -42,7 +42,7 @@ void cadastrar(int codigo[], char nome[][15], int *total) {
     printf("\nCadastro realizado com sucesso!\n");
 }
 
-// 2 - CONSULTAR: procura um codigo e mostra o registro
+// CONSULTAR: procura um codigo e mostra o registro
 void consultar(int codigo[], char nome[][15], int total) {
     int busca;
     int i;
@@ -59,7 +59,7 @@ void consultar(int codigo[], char nome[][15], int total) {
     }
 }
 
-// 3 - LISTAR: mostra todos os registros cadastrados
+// LISTAR: mostra todos os registros cadastrados
 void listar(int codigo[], char nome[][15], int total) {
     int i;
 
@@ -74,7 +74,7 @@ void listar(int codigo[], char nome[][15], int total) {
     }
 }
 
-// 4 - ALTERAR: procura um codigo e troca codigo e nome
+// ALTERAR: procura um codigo e troca codigo e nome
 void alterar(int codigo[], char nome[][15], int total) {
     int busca;
     int i;
@@ -95,7 +95,7 @@ void alterar(int codigo[], char nome[][15], int total) {
     }
 }
 
-// 5 - EXCLUIR: remove um registro e fecha o "buraco" no vetor
+// EXCLUIR: remove um registro e fecha o "buraco" no vetor
 void excluir(int codigo[], char nome[][15], int *total) {
     int busca;
     int i;
@@ -118,7 +118,7 @@ void excluir(int codigo[], char nome[][15], int *total) {
     }
 }
 
-// ===== PROGRAMA PRINCIPAL =====
+// PROGRAMA PRINCIPAL
 int main(void) {
     int codigo[5];
     char nome[5][15];
@@ -140,21 +140,27 @@ int main(void) {
             case 1:
                 cadastrar(codigo, nome, &total);
                 break;
+
             case 2:
                 consultar(codigo, nome, total);
                 break;
+                
             case 3:
                 listar(codigo, nome, total);
                 break;
+
             case 4:
                 alterar(codigo, nome, total);
                 break;
+
             case 5:
                 excluir(codigo, nome, &total);
                 break;
+
             case 0:
                 printf("\nEncerrando...\n");
                 break;
+                
             default:
                 printf("\nOpcao invalida!\n");
         }
