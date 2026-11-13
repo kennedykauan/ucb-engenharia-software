@@ -1,8 +1,3 @@
-/*
- * SISTEMA DE ATENDIMENTO PARA PETSHOP
- * Bibliotecas: stdio.h (printf, sprintf, getchar), string.h (strcmp, strcpy), stdlib.h (atoi)
- */
-
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -12,118 +7,67 @@
 #define USUARIO "admin"
 #define SENHA "1234"
 
-/* ---------- DADOS DO ATENDIMENTO ---------- */
+// Dados do atendimento
 char funcionario[TAM_TEXTO];
 char clienteNome[TAM_TEXTO], clienteTelefone[TAM_TEXTO];
-char petNome[TAM_TEXTO], petEspecie[TAM_TEXTO], petRaca[TAM_TEXTO], petPorte[TAM_TEXTO];
+char petNome[TAM_TEXTO], petEspecie[20], petRaca[TAM_TEXTO], petPorte[20];
 int clienteCadastrado = 0, petCadastrado = 0;
-int petPorteCodigo = 0; /* 1 = pequeno, 2 = medio, 3 = grande */
+int petPorteCodigo = 0; // 1 = pequeno, 2 = medio, 3 = grande
 
-/* Vetores paralelos: o item i usa a posicao i dos tres vetores */
+// Vetores paralelos para o comprovante
 char itemDescricao[MAX_ITENS][TAM_TEXTO];
 int itemQuantidade[MAX_ITENS];
 float itemValor[MAX_ITENS];
 int totalItens = 0;
 
-/* ---------- TEXTOS DOS MENUS ---------- */
-char itensPrincipal[4][TAM_TEXTO] = {"Cadastros", "Servicos", "Produtos", "Comprovante"};
-char itensCadastros[2][TAM_TEXTO] = {"Cadastrar cliente", "Cadastrar pet"};
-char itensServicos[3][TAM_TEXTO] = {"Banho", "Tosa", "Veterinaria"};
-char itensTosa[3][TAM_TEXTO] = {"Tosa higienica", "Tosa completa", "Tosa na tesoura"};
-char itensVet[3][TAM_TEXTO] = {"Consulta", "Vacina", "Exame"};
-
-/* ---------- PRODUTOS ----------
-   Categoria 0 = Alimentos, 1 = Acessorios, 2 = Higiene.
-   O preco em precosProdutos[c][p] pertence ao nome em nomesProdutos[c][p] */
-char categorias[3][TAM_TEXTO] = {"Alimentos", "Acessorios", "Higiene"};
+// Vetores de produtos (0 = Alimentos, 1 = Acessorios, 2 = Higiene)
+char categorias[3][TAM_TEXTO] = {"ALIMENTOS", "ACESSORIOS", "HIGIENE"};
 char nomesProdutos[3][3][TAM_TEXTO] = {
-    {"Racao caes 10kg", "Racao gatos 3kg", "Petisco"},
+    {"Racao cao 10kg", "Racao gato 3kg", "Petisco"},
     {"Coleira", "Brinquedo", "Caminha"},
     {"Shampoo", "Escova", "Tapete higienico"}
 };
 float precosProdutos[3][3] = {
-    {120.00f, 65.00f, 12.50f},
-    {25.00f, 18.00f, 90.00f},
-    {22.00f, 15.00f, 35.00f}
+    {120.00, 65.00, 15.00},
+    {25.00, 18.00, 90.00},
+    {22.00, 15.00, 35.00}
 };
 
-/* ---------- LEITURA DE DADOS ---------- */
-
-/* Le uma linha com getchar() ate o ENTER e guarda em "destino".
-   O que passar do tamanho e descartado. */
-void lerTexto(char destino[], int tamanho)
-{
+void lerTexto(char destino[], int tamanho) {
     int c, i = 0;
-
-    while ((c = getchar()) != '\n' && c != EOF)
-    {
-        if (i < tamanho - 1)
-        {
-            destino[i++] = (char)c;
+    while ((c = getchar()) != '\n' && c != EOF) {
+        if (i < tamanho - 1) {
+            destino[i] = c;
+            i++;
         }
     }
     destino[i] = '\0';
 }
 
-/* Le um numero. Se nao comecar com digito, retorna -1 (opcao invalida) */
-int lerInteiro(void)
-{
+int lerInteiro() {
     char buffer[20];
-
     lerTexto(buffer, 20);
-    if (buffer[0] < '0' || buffer[0] > '9')
-    {
+    if (buffer[0] < '0' || buffer[0] > '9') {
         return -1;
     }
     return atoi(buffer);
 }
 
-/* ---------- MENU GENERICO ----------
-   Mostra "titulo" e as n opcoes de "itens" (numeradas de 1 a n), mais a
-   opcao 0 com o texto "zero". Repete (do-while) ate o usuario digitar
-   uma opcao valida e retorna o numero escolhido. */
-int menu(char titulo[], char itens[][TAM_TEXTO], int n, char zero[])
-{
-    int i, opcao;
-
-    do
-    {
-        printf("\n----- %s -----\n", titulo);
-        for (i = 0; i < n; i++)
-        {
-            printf("%d - %s\n", i + 1, itens[i]);
-        }
-        printf("0 - %s\n", zero);
-        printf("Escolha uma opcao: ");
-        opcao = lerInteiro();
-        if (opcao < 0 || opcao > n)
-        {
-            printf("Opcao invalida! Tente novamente.\n");
-        }
-    } while (opcao < 0 || opcao > n);
-
-    return opcao;
-}
-
-/* ---------- LOGIN ---------- */
-
-/* Ate 3 tentativas. Retorna 1 se acertou e 0 se as tentativas acabaram */
-int login(void)
-{
+// Login do funcionario ate 3 tentativas
+int login() {
     char usuario[TAM_TEXTO], senha[TAM_TEXTO];
     int tentativa;
 
     printf("===== PETSHOP AMIGO FIEL - LOGIN =====\n");
-    for (tentativa = 1; tentativa <= 3; tentativa++)
-    {
+    for (tentativa = 1; tentativa <= 3; tentativa++) {
         printf("Usuario: ");
         lerTexto(usuario, TAM_TEXTO);
         printf("Senha: ");
         lerTexto(senha, TAM_TEXTO);
 
-        if (strcmp(usuario, USUARIO) == 0 && strcmp(senha, SENHA) == 0)
-        {
+        if (strcmp(usuario, USUARIO) == 0 && strcmp(senha, SENHA) == 0) {
             strcpy(funcionario, usuario);
+            printf("Login realizado com sucesso!\n");
             return 1;
         }
         printf("Usuario ou senha incorretos (%d de 3).\n\n", tentativa);
@@ -132,94 +76,8 @@ int login(void)
     return 0;
 }
 
-/* ---------- ETAPA 3: CADASTROS ---------- */
-
-void cadastrarCliente(void)
-{
-    printf("Nome do cliente: ");
-    lerTexto(clienteNome, TAM_TEXTO);
-    printf("Telefone: ");
-    lerTexto(clienteTelefone, TAM_TEXTO);
-
-    clienteCadastrado = 1;
-    petCadastrado = 0; /* pet antigo pertencia ao cliente anterior */
-    printf("Cliente cadastrado!\n");
-}
-
-/* O pet so pode ser cadastrado depois do cliente */
-void cadastrarPet(void)
-{
-    if (!clienteCadastrado)
-    {
-        printf("Cadastre um cliente antes do pet.\n");
-        return;
-    }
-
-    printf("Nome do pet: ");
-    lerTexto(petNome, TAM_TEXTO);
-
-    do
-    {
-        printf("Especie (cao ou gato): ");
-        lerTexto(petEspecie, TAM_TEXTO);
-    } while (strcmp(petEspecie, "cao") != 0 && strcmp(petEspecie, "gato") != 0);
-
-    printf("Raca: ");
-    lerTexto(petRaca, TAM_TEXTO);
-
-    do
-    {
-        printf("Porte (pequeno, medio ou grande): ");
-        lerTexto(petPorte, TAM_TEXTO);
-
-        if (strcmp(petPorte, "pequeno") == 0)
-        {
-            petPorteCodigo = 1;
-        }
-        else if (strcmp(petPorte, "medio") == 0)
-        {
-            petPorteCodigo = 2;
-        }
-        else if (strcmp(petPorte, "grande") == 0)
-        {
-            petPorteCodigo = 3;
-        }
-        else
-        {
-            petPorteCodigo = 0;
-        }
-    } while (petPorteCodigo == 0);
-
-    petCadastrado = 1;
-    printf("Pet cadastrado!\n");
-}
-
-void menuCadastros(void)
-{
-    int opcao;
-
-    do
-    {
-        opcao = menu("CADASTROS", itensCadastros, 2, "Voltar");
-        switch (opcao)
-        {
-            case 1:
-                cadastrarCliente();
-                break;
-            case 2:
-                cadastrarPet();
-                break;
-        }
-    } while (opcao != 0);
-}
-
-/* ---------- ETAPA 6 (parte 1): REGISTRO DOS ITENS ---------- */
-
-/* Guarda um item nos vetores e avisa o usuario */
-void registrarItem(char descricao[], int quantidade, float valor)
-{
-    if (totalItens >= MAX_ITENS)
-    {
+void registrarItem(char descricao[], int quantidade, float valor) {
+    if (totalItens >= MAX_ITENS) {
         printf("Limite de itens atingido!\n");
         return;
     }
@@ -227,147 +85,242 @@ void registrarItem(char descricao[], int quantidade, float valor)
     itemQuantidade[totalItens] = quantidade;
     itemValor[totalItens] = valor;
     totalItens++;
-    printf("Adicionado: %dx %s - R$ %.2f\n", quantidade, descricao, valor);
+    printf("Valor: R$ %.2f (Adicionado: %dx %s)\n", valor, quantidade, descricao);
 }
 
-/* ---------- ETAPA 4: SERVICOS ----------
-   Cada servico e uma funcao que recebe a opcao e retorna o valor */
+// Cadastros
+void cadastrarCliente() {
+    printf("\nNome do cliente: ");
+    lerTexto(clienteNome, TAM_TEXTO);
+    printf("Telefone: ");
+    lerTexto(clienteTelefone, TAM_TEXTO);
 
-float banho(int porte)
-{
-    switch (porte)
-    {
-        case 1: return 40.00f;
-        case 2: return 60.00f;
-        case 3: return 80.00f;
+    clienteCadastrado = 1;
+    petCadastrado = 0;
+    printf("Cliente cadastrado!\n");
+}
+
+void cadastrarPet() {
+    if (!clienteCadastrado) {
+        printf("\nCadastre um cliente antes do pet.\n");
+        return;
     }
-    return 0.0f;
+
+    printf("\nNome do pet: ");
+    lerTexto(petNome, TAM_TEXTO);
+
+    do {
+        printf("Especie (cao ou gato): ");
+        lerTexto(petEspecie, 20);
+        if (strcmp(petEspecie, "cao") != 0 && strcmp(petEspecie, "gato") != 0) {
+            printf("Especie invalida! Digite cao ou gato.\n");
+        }
+    } while (strcmp(petEspecie, "cao") != 0 && strcmp(petEspecie, "gato") != 0);
+
+    printf("Raca: ");
+    lerTexto(petRaca, TAM_TEXTO);
+
+    do {
+        printf("Porte (pequeno, medio ou grande): ");
+        lerTexto(petPorte, 20);
+
+        if (strcmp(petPorte, "pequeno") == 0) {
+            petPorteCodigo = 1;
+        } else if (strcmp(petPorte, "medio") == 0) {
+            petPorteCodigo = 2;
+        } else if (strcmp(petPorte, "grande") == 0) {
+            petPorteCodigo = 3;
+        } else {
+            petPorteCodigo = 0;
+            printf("Porte invalido! Digite pequeno, medio ou grande.\n");
+        }
+    } while (petPorteCodigo == 0);
+
+    petCadastrado = 1;
+    printf("Pet cadastrado!\n");
 }
 
-float tosa(int opcao)
-{
-    switch (opcao)
-    {
-        case 1: return 45.00f;
-        case 2: return 70.00f;
-        case 3: return 90.00f;
+void menuCadastros() {
+    int opcao;
+    do {
+        printf("\n--------- CADASTROS ----------\n");
+        printf("  1 - Cadastrar cliente\n");
+        printf("  2 - Cadastrar pet\n");
+        printf("  0 - Voltar\n");
+        printf("Escolha uma opcao: ");
+        opcao = lerInteiro();
+
+        switch (opcao) {
+            case 1: cadastrarCliente(); break;
+            case 2: cadastrarPet(); break;
+            case 0: break;
+            default: printf("Opcao invalida! Tente novamente.\n"); break;
+        }
+    } while (opcao != 0);
+}
+
+// Servicos
+float banho(int porte) {
+    switch (porte) {
+        case 1: return 40.00;
+        case 2: return 60.00;
+        case 3: return 80.00;
+        default: return 0.00;
     }
-    return 0.0f;
 }
 
-float veterinaria(int opcao)
-{
-    switch (opcao)
-    {
-        case 1: return 120.00f;
-        case 2: return 80.00f;
-        case 3: return 150.00f;
+float tosa(int opcao) {
+    switch (opcao) {
+        case 1: return 45.00;
+        case 2: return 70.00;
+        case 3: return 90.00;
+        default: return 0.00;
     }
-    return 0.0f;
 }
 
-/* Servicos so podem ser contratados depois do cadastro do pet */
-void menuServicos(void)
-{
+float veterinaria(int opcao) {
+    switch (opcao) {
+        case 1: return 120.00;
+        case 2: return 80.00;
+        case 3: return 150.00;
+        default: return 0.00;
+    }
+}
+
+void menuServicos() {
     int opcao, sub;
     char descricao[TAM_TEXTO];
 
-    if (!petCadastrado)
-    {
-        printf("Cadastre o cliente e o pet antes dos servicos.\n");
+    if (!petCadastrado) {
+        printf("\nCadastre o cliente e o pet antes dos servicos.\n");
         return;
     }
 
-    do
-    {
-        opcao = menu("SERVICOS", itensServicos, 3, "Voltar");
-        switch (opcao)
-        {
+    do {
+        printf("\n---------- SERVICOS ----------\n");
+        printf("  1 - Banho\n");
+        printf("  2 - Tosa\n");
+        printf("  3 - Veterinaria\n");
+        printf("  0 - Voltar\n");
+        printf("Escolha uma opcao: ");
+        opcao = lerInteiro();
+
+        switch (opcao) {
             case 1:
-                sprintf(descricao, "Banho (porte %.20s)", petPorte);
+                sprintf(descricao, "Banho (porte %s)", petPorte);
                 registrarItem(descricao, 1, banho(petPorteCodigo));
                 break;
             case 2:
-                sub = menu("TOSA", itensTosa, 3, "Voltar");
-                if (sub > 0)
-                {
-                    registrarItem(itensTosa[sub - 1], 1, tosa(sub));
-                }
+                do {
+                    printf("\n------------ TOSA ------------\n");
+                    printf("  1 - Tosa higienica   R$ 45,00\n");
+                    printf("  2 - Tosa completa    R$ 70,00\n");
+                    printf("  3 - Tosa na tesoura  R$ 90,00\n");
+                    printf("  0 - Voltar\n");
+                    printf("Escolha uma opcao: ");
+                    sub = lerInteiro();
+
+                    switch (sub) {
+                        case 1: registrarItem("Tosa higienica", 1, tosa(1)); break;
+                        case 2: registrarItem("Tosa completa", 1, tosa(2)); break;
+                        case 3: registrarItem("Tosa na tesoura", 1, tosa(3)); break;
+                        case 0: break;
+                        default: printf("Opcao invalida! Tente novamente.\n"); break;
+                    }
+                } while (sub != 0);
                 break;
             case 3:
-                sub = menu("VETERINARIA", itensVet, 3, "Voltar");
-                if (sub > 0)
-                {
-                    registrarItem(itensVet[sub - 1], 1, veterinaria(sub));
-                }
+                do {
+                    printf("\n-------- VETERINARIA ---------\n");
+                    printf("  1 - Consulta         R$ 120,00\n");
+                    printf("  2 - Vacina           R$  80,00\n");
+                    printf("  3 - Exame            R$ 150,00\n");
+                    printf("  0 - Voltar\n");
+                    printf("Escolha uma opcao: ");
+                    sub = lerInteiro();
+
+                    switch (sub) {
+                        case 1: registrarItem("Consulta", 1, veterinaria(1)); break;
+                        case 2: registrarItem("Vacina", 1, veterinaria(2)); break;
+                        case 3: registrarItem("Exame", 1, veterinaria(3)); break;
+                        case 0: break;
+                        default: printf("Opcao invalida! Tente novamente.\n"); break;
+                    }
+                } while (sub != 0);
+                break;
+            case 0:
+                break;
+            default:
+                printf("Opcao invalida! Tente novamente.\n");
                 break;
         }
     } while (opcao != 0);
 }
 
-/* ---------- ETAPA 5: PRODUTOS ---------- */
-
-/* Mostra os produtos da categoria "cat", pede produto e quantidade
-   e registra o item com valor = preco x quantidade */
-void escolherProduto(int cat)
-{
-    char lista[3][TAM_TEXTO];
+// Produtos
+void escolherProduto(int cat) {
     int i, produto, quantidade;
+    float valor;
 
-    for (i = 0; i < 3; i++)
-    {
-        sprintf(lista[i], "%.30s (R$ %.2f)", nomesProdutos[cat][i], precosProdutos[cat][i]);
-    }
+    do {
+        printf("\n--------- %s ----------\n", categorias[cat]);
+        for (i = 0; i < 3; i++) {
+            printf("  %d - %s - R$ %.2f\n", i + 1, nomesProdutos[cat][i], precosProdutos[cat][i]);
+        }
+        printf("  0 - Voltar\n");
+        printf("Produto: ");
+        produto = lerInteiro();
 
-    produto = menu(categorias[cat], lista, 3, "Voltar");
-    if (produto == 0)
-    {
-        return;
-    }
-
-    printf("Quantidade: ");
-    quantidade = lerInteiro();
-    if (quantidade < 1)
-    {
-        printf("Quantidade invalida!\n");
-        return;
-    }
-
-    registrarItem(nomesProdutos[cat][produto - 1], quantidade, precosProdutos[cat][produto - 1] * quantidade);
+        switch (produto) {
+            case 1:
+            case 2:
+            case 3:
+                printf("Quantidade: ");
+                quantidade = lerInteiro();
+                if (quantidade > 0) {
+                    valor = precosProdutos[cat][produto - 1] * quantidade;
+                    registrarItem(nomesProdutos[cat][produto - 1], quantidade, valor);
+                } else {
+                    printf("Quantidade invalida!\n");
+                }
+                break;
+            case 0:
+                break;
+            default:
+                printf("Opcao invalida! Tente novamente.\n");
+                break;
+        }
+    } while (produto != 0);
 }
 
-void menuProdutos(void)
-{
+void menuProdutos() {
     int opcao;
+    do {
+        printf("\n---------- PRODUTOS ----------\n");
+        printf("  1 - Alimentos\n");
+        printf("  2 - Acessorios\n");
+        printf("  3 - Higiene\n");
+        printf("  0 - Voltar\n");
+        printf("Escolha uma opcao: ");
+        opcao = lerInteiro();
 
-    do
-    {
-        opcao = menu("PRODUTOS", categorias, 3, "Voltar");
-        switch (opcao)
-        {
-            case 1:
-                escolherProduto(0);
-                break;
-            case 2:
-                escolherProduto(1);
-                break;
-            case 3:
-                escolherProduto(2);
-                break;
+        switch (opcao) {
+            case 1: escolherProduto(0); break;
+            case 2: escolherProduto(1); break;
+            case 3: escolherProduto(2); break;
+            case 0: break;
+            default: printf("Opcao invalida! Tente novamente.\n"); break;
         }
     } while (opcao != 0);
 }
 
-/* ---------- ETAPA 6 (parte 2): COMPROVANTE ---------- */
-
-void comprovante(void)
-{
+// Comprovante final
+void comprovante() {
     int i;
-    float total = 0.0f;
+    float total = 0.0;
 
-    if (!petCadastrado)
-    {
-        printf("Cadastre o cliente e o pet antes do comprovante.\n");
+    if (!petCadastrado) {
+        printf("\nCadastre o cliente e o pet antes do comprovante.\n");
         return;
     }
 
@@ -377,10 +330,13 @@ void comprovante(void)
     printf("Pet: %s - %s - %s - porte %s\n", petNome, petEspecie, petRaca, petPorte);
     printf("-----------------------------------\n");
 
-    for (i = 0; i < totalItens; i++)
-    {
-        printf("%d) %s | Qtd: %d | R$ %.2f\n", i + 1, itemDescricao[i], itemQuantidade[i], itemValor[i]);
-        total += itemValor[i];
+    if (totalItens == 0) {
+        printf("Nenhum item registrado.\n");
+    } else {
+        for (i = 0; i < totalItens; i++) {
+            printf("%d) %s | Qtd: %d | R$ %.2f\n", i + 1, itemDescricao[i], itemQuantidade[i], itemValor[i]);
+            total += itemValor[i];
+        }
     }
 
     printf("-----------------------------------\n");
@@ -388,37 +344,36 @@ void comprovante(void)
     printf("===================================\n");
 }
 
-/* ---------- ETAPA 2: MENU PRINCIPAL ---------- */
-
-int main(void)
-{
+// Menu principal
+int main() {
     int opcao;
 
-    if (!login())
-    {
+    if (!login()) {
         return 0;
     }
 
-    do
-    {
-        opcao = menu("PETSHOP AMIGO FIEL", itensPrincipal, 4, "Sair");
-        switch (opcao)
-        {
-            case 1:
-                menuCadastros();
-                break;
-            case 2:
-                menuServicos();
-                break;
-            case 3:
-                menuProdutos();
-                break;
-            case 4:
-                comprovante();
-                break;
+    do {
+        printf("\n==============================\n");
+        printf("     PETSHOP AMIGO FIEL\n");
+        printf("==============================\n");
+        printf("  1 - Cadastros\n");
+        printf("  2 - Servicos\n");
+        printf("  3 - Produtos\n");
+        printf("  4 - Comprovante final\n");
+        printf("  0 - Sair\n");
+        printf("==============================\n");
+        printf("Escolha uma opcao: ");
+        opcao = lerInteiro();
+
+        switch (opcao) {
+            case 1: menuCadastros(); break;
+            case 2: menuServicos(); break;
+            case 3: menuProdutos(); break;
+            case 4: comprovante(); break;
+            case 0: printf("Encerrando o sistema. Ate logo!\n"); break;
+            default: printf("Opcao invalida! Tente novamente.\n"); break;
         }
     } while (opcao != 0);
 
-    printf("Encerrando o sistema. Ate logo!\n");
     return 0;
 }
