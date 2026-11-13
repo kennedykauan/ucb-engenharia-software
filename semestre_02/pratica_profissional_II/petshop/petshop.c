@@ -58,7 +58,7 @@ int login() {
     char usuario[TAM_TEXTO], senha[TAM_TEXTO];
     int tentativa;
 
-    printf("===== PETSHOP AMIGO FIEL - LOGIN =====\n");
+    printf("PETSHOP Kennedy da silva - LOGIN\n");
     for (tentativa = 1; tentativa <= 3; tentativa++) {
         printf("Usuario: ");
         lerTexto(usuario, TAM_TEXTO);
