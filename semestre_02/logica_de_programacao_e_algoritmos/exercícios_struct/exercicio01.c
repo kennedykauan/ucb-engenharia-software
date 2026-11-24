@@ -3,6 +3,7 @@
 
 #define QTD_ALUNOS 10
 
+// definicao da struct aluno
 typedef struct {
     int matricula;
     char nome[100];
@@ -11,11 +12,13 @@ typedef struct {
     float media;
 } Aluno;
 
+// funcao para limpar o buffer do teclado
 void limparBuffer() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
 }
 
+//funcao para calcular a media de duas notas
 float calcularMedia(float n1, float n2) {
     return (n1 + n2) / 2.0f;
 }
@@ -25,20 +28,23 @@ int main() {
     float somaMedias = 0.0f, mediaGeral;
     int idxMaior = 0, idxMenor = 0, acimaMediaGeral = 0;
 
-    printf("=== CADASTRO DE %d ALUNOS ===\n", QTD_ALUNOS);
+    printf("CADASTRO DE %d ALUNOS\n", QTD_ALUNOS);
     for (int i = 0; i < QTD_ALUNOS; i++) {
         printf("\nAluno %d:\n", i + 1);
         printf("Matricula: ");
         scanf("%d", &alunos[i].matricula);
         limparBuffer();
 
+
         printf("Nome: ");
         fgets(alunos[i].nome, sizeof(alunos[i].nome), stdin);
         alunos[i].nome[strcspn(alunos[i].nome, "\n")] = '\0';
 
+
         printf("Nota 1: ");
         scanf("%f", &alunos[i].nota1);
 
+        
         printf("Nota 2: ");
         scanf("%f", &alunos[i].nota2);
 
@@ -55,7 +61,7 @@ int main() {
 
     mediaGeral = somaMedias / QTD_ALUNOS;
 
-    printf("\n=== RESULTADOS DA TURMA ===\n");
+    printf("\nRESULTADOS DA TURMA\n");
     for (int i = 0; i < QTD_ALUNOS; i++) {
         const char *situacao = (alunos[i].media >= 6.0f) ? "APROVADO" : "REPROVADO";
         printf("Mat: %d | Nome: %-20s | Media: %.2f | Situacao: %s\n",

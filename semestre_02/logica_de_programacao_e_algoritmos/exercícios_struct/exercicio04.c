@@ -4,6 +4,7 @@
 #define MAX_PRODUTOS 10
 #define MAX_VENDAS 20
 
+// definicao da struct produto
 typedef struct {
     int codigo;
     char nome[100];
@@ -11,17 +12,20 @@ typedef struct {
     int estoque;
 } Produto;
 
+// definicao da struct venda
 typedef struct {
     Produto produto;
     int quantidade;
     float valorTotal;
 } Venda;
 
+// funcao para limpar o buffer do teclado
 void limparBuffer() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
 }
 
+// funcao para buscar o indice de um produto pelo codigo
 int buscarProduto(Produto produtos[], int total, int codigo) {
     for (int i = 0; i < total; i++) {
         if (produtos[i].codigo == codigo) {
@@ -46,6 +50,7 @@ int main() {
         printf("Escolha: ");
         scanf("%d", &opcao);
 
+        //cadastrar um produto
         if (opcao == 1) {
             if (totalProdutos >= MAX_PRODUTOS) {
                 printf("Limite de produtos atingido!\n");
@@ -75,6 +80,7 @@ int main() {
             totalProdutos++;
             printf("Produto cadastrado!\n");
 
+            //registrar uma venda
         } else if (opcao == 2) {
             if (totalVendas >= MAX_VENDAS) {
                 printf("Limite de vendas atingido!\n");
@@ -112,6 +118,7 @@ int main() {
             printf("Venda registrada! Valor total: R$ %.2f\n", vendas[totalVendas].valorTotal);
             totalVendas++;
 
+            //gerar relatorio de faturamento e estoque
         } else if (opcao == 3) {
             float faturamentoTotal = 0.0f;
             float faturamentoPorProduto[MAX_PRODUTOS] = {0};
@@ -124,7 +131,7 @@ int main() {
                 }
             }
 
-            printf("\n=== RELATORIO GERAL ===\n");
+            printf("\nRELATORIO GERAL\n");
             printf("Faturamento total: R$ %.2f\n", faturamentoTotal);
 
             if (totalVendas > 0 && totalProdutos > 0) {

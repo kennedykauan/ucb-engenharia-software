@@ -4,6 +4,7 @@
 #define MAX_FUNC 8
 #define HORAS_MENSAIS 160.0f
 
+// definicao da struct funcionario
 typedef struct {
     int codigo;
     char nome[100];
@@ -12,6 +13,7 @@ typedef struct {
     float horasExtras;
 } Funcionario;
 
+// funcao para limpar o buffer do teclado
 void limparBuffer() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
@@ -52,7 +54,7 @@ int main() {
     float custoTotalBruto = 0.0f;
     float custoTotalLiquido = 0.0f;
 
-    printf("\n=== FOLHA DE PAGAMENTO ===\n");
+    printf("\nFOLHA DE PAGAMENTO\n");
     for (int i = 0; i < qtd; i++) {
         float valorHora = funcs[i].salarioBase / HORAS_MENSAIS;
         float valorHoraExtra = valorHora * 1.5f;

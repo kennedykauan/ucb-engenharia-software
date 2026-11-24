@@ -4,29 +4,34 @@
 #define MAX_PACIENTES 15
 #define MAX_CONSULTAS 30
 
+// definicao da struct data
 typedef struct {
     int dia;
     int mes;
     int ano;
 } Data;
 
+// definicao da struct paciente
 typedef struct {
     int codigo;
     char nome[100];
     char telefone[25];
 } Paciente;
 
+// definicao da struct consulta
 typedef struct {
     Paciente paciente;
     Data data;
     char descricao[200];
 } Consulta;
 
+// funcao para limpar o buffer do teclado
 void limparBuffer() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
 }
 
+// funcao para buscar o indice de um paciente pelo codigo
 int buscarPaciente(Paciente pacientes[], int total, int codigo) {
     for (int i = 0; i < total; i++) {
         if (pacientes[i].codigo == codigo) {
@@ -53,6 +58,7 @@ int main() {
         printf("Escolha: ");
         scanf("%d", &opcao);
 
+        //cadastrar um paciente
         if (opcao == 1) {
             if (totalPacientes >= MAX_PACIENTES) {
                 printf("Limite de pacientes atingido!\n");
@@ -80,6 +86,7 @@ int main() {
             totalPacientes++;
             printf("Paciente cadastrado com sucesso!\n");
 
+            //registrar uma consulta
         } else if (opcao == 2) {
             if (totalConsultas >= MAX_CONSULTAS) {
                 printf("Limite de consultas atingido!\n");
@@ -116,6 +123,7 @@ int main() {
             totalConsultas++;
             printf("Consulta registrada!\n");
 
+        //gerar relatorio de consultas por paciente
         } else if (opcao == 3) {
             int cod, encontradas = 0;
             printf("Codigo do paciente: ");
@@ -134,6 +142,7 @@ int main() {
                 printf("Nenhuma consulta encontrada para este paciente.\n");
             }
 
+            //gerar relatorio de consultas por data
         } else if (opcao == 4) {
             Data d;
             int encontradas = 0;
@@ -155,6 +164,7 @@ int main() {
                 printf("Nenhuma consulta registrada nesta data.\n");
             }
 
+            //estatisticas de atendimento por paciente
         } else if (opcao == 5) {
             if (totalPacientes == 0) {
                 printf("Nenhum paciente cadastrado.\n");
@@ -164,7 +174,7 @@ int main() {
             int maxAtendimentos = -1;
             int idxMaisAtendido = 0;
 
-            printf("\n=== CONTAGEM DE CONSULTAS POR PACIENTE ===\n");
+            printf("\nCONTAGEM DE CONSULTAS POR PACIENTE\n");
             for (int i = 0; i < totalPacientes; i++) {
                 int contagem = 0;
                 for (int j = 0; j < totalConsultas; j++) {

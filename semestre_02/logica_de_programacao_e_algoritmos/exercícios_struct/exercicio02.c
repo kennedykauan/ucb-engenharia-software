@@ -3,6 +3,7 @@
 
 #define MAX_PRODUTOS 15
 
+// definicao da struct produto
 typedef struct {
     int codigo;
     char nome[100];
@@ -10,11 +11,13 @@ typedef struct {
     int quantidade;
 } Produto;
 
+//funcao para limpar o buffer do teclado
 void limparBuffer() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
 }
 
+//funcao para buscar o indice de um produto pelo codigo
 int buscarIndicePorCodigo(Produto produtos[], int total, int codigo) {
     for (int i = 0; i < total; i++) {
         if (produtos[i].codigo == codigo) {
@@ -24,6 +27,7 @@ int buscarIndicePorCodigo(Produto produtos[], int total, int codigo) {
     return -1;
 }
 
+//funcao para cadastrar um novo produto
 void cadastrarProduto(Produto produtos[], int *total) {
     if (*total >= MAX_PRODUTOS) {
         printf("Limite maximo de %d produtos atingido!\n", MAX_PRODUTOS);
