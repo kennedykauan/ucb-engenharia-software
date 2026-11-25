@@ -42,7 +42,7 @@ int main() {
     int opcao;
 
     do {
-        printf("\n=== SISTEMA DE VENDAS ===\n");
+        printf("\nSISTEMA DE VENDAS\n");
         printf("1. Cadastrar produto (%d/%d)\n", totalProdutos, MAX_PRODUTOS);
         printf("2. Registrar venda (%d/%d)\n", totalVendas, MAX_VENDAS);
         printf("3. Relatorio de faturamento e estoque\n");

@@ -77,7 +77,7 @@ int main() {
                salarioBruto, desconto, salarioLiquido);
     }
 
-    printf("\n=== RESUMO DA FOLHA ===\n");
+    printf("\nRESUMO DA FOLHA\n");
     printf("Maior salario liquido: %s (R$ %.2f)\n", funcs[idxMaior].nome, maiorSalarioLiquido);
     printf("Custo total da folha (Bruto): R$ %.2f\n", custoTotalBruto);
     printf("Custo total da folha (Liquido): R$ %.2f\n", custoTotalLiquido);

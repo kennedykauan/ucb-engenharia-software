@@ -166,7 +166,7 @@ int main() {
     int opcao;
 
     do {
-        printf("\n=== MENU PAPELARIA ===\n");
+        printf("\nMENU PAPELARIA\n");
         printf("1. Cadastrar produto\n");
         printf("2. Listar produtos (e totais de estoque)\n");
         printf("3. Repor estoque\n");
